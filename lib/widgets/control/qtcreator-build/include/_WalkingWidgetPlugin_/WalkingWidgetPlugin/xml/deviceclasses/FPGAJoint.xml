@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<deviceclass name="FPGAJoint">
+    <register id="1" type="uint8" name="SYNTHESIS_YEAR">Synthesis date (year)</register>
+    <register id="2" type="uint8" name="SYNTHESIS_MONTH">Synthesis date (month)</register>
+    <register id="3" type="uint8" name="SYNTHESIS_DAY">Synthesis date (day)</register>
+    <register id="4" type="uint8" name="SYNTHESIS_AUTHOR">Synthesis author</register>
+</deviceclass>

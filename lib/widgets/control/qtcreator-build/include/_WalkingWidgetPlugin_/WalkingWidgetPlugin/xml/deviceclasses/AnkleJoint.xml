@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<deviceclass name="AnkleJoint"> <!-- extends="NDLCom" -->
+    <!-- Memory regions and start addresses for user program and/or bootloader -->
+    <isp_region name="FPGA" begin="0x0" />
+
+    <!-- number of registers and length of telemetry data -->
+    <registercount type="ROM" count="80" />
+    <registercount type="RAM" count="40" />
+    <registercount type="RO" count="10" />
+
+    <!-- ROM-Register -->
+    <register id="8" type="uint8" name="POSITION_PGAIN_0">Proportional Value for the Position Controller (LSB)</register>
+    <register id="9" type="uint8" name="POSITION_PGAIN_1">Proportional Value for the Position Controller (MSB)</register>
+    <register id="10" type="uint8" name="POSITION_IGAIN_0">Integral Value for the Position Controller (LSB)</register>
+    <register id="11" type="uint8" name="POSITION_IGAIN_1">Integral Value for the Position Controller (MSB)</register>
+    <register id="12" type="uint8" name="POSITION_DGAIN_0">Damping Value for the Position Controller (LSB)</register>
+    <register id="13" type="uint8" name="POSITION_DGAIN_1">Damping Value for the Position Controller (MSB)</register>
+    <register id="16" type="uint8" name="SPEED_PGAIN_0">Proportional Value for the Speed Controller (LSB)</register>
+    <register id="17" type="uint8" name="SPEED_PGAIN_1">Proportional Value for the Speed Controller (MSB)</register>
+    <register id="18" type="uint8" name="SPEED_IGAIN_0">Integral Value for the Speed Controller (LSB)</register>
+    <register id="19" type="uint8" name="SPEED_IGAIN_1">Integral Value for the Speed Controller (MSB)</register>
+    <register id="20" type="uint8" name="SPEED_DGAIN_0">Damping Value for the Speed Controller (LSB)</register>
+    <register id="21" type="uint8" name="SPEED_DGAIN_1">Damping Value for the Speed Controller (MSB)</register>
+    <register id="36" type="uint8" name="PITCH_ICHAUS_OFFSET_0">IC-Haus offset of the pitch angle (LSB)</register>
+    <register id="37" type="uint8" name="PITCH_ICHAUS_OFFSET_1">IC-Haus offset of the pitch angle (MSB)</register>
+    <register id="38" type="uint8" name="ROLL_ICHAUS_OFFSET_0">IC-Haus offset of the roll angle (LSB)</register>
+    <register id="39" type="uint8" name="ROLL_ICHAUS_OFFSET_1">IC-Haus offset of the roll angle (MSB)</register>
+    <register id="40" type="uint8" name="YAW_ICHAUS_OFFSET_0">IC-Haus offset of the yaw angle (LSB)</register>
+    <register id="41" type="uint8" name="YAW_ICHAUS_OFFSET_1">IC-Haus offset of the yaw angle (MSB)</register>
+    <register id="42" type="uint8" name="PITCH_LOWER_SOFT_LIMIT_0">Angle of the lower bound soft-limiter of the pitch (LSB)</register>
+    <register id="43" type="uint8" name="PITCH_LOWER_SOFT_LIMIT_1">Angle of the lower bound soft-limiter of the pitch (MSB)</register>
+    <register id="44" type="uint8" name="PITCH_UPPER_SOFT_LIMIT_0">Angle of the upper bound soft-limiter of the pitch (LSB)</register>
+    <register id="45" type="uint8" name="PITCH_UPPER_SOFT_LIMIT_1">Angle of the upper bound soft-limiter of the pitch (MSB)</register>
+    <register id="46" type="uint8" name="ROLL_LOWER_SOFT_LIMIT_0">Angle of the lower bound soft-limiter of the roll (LSB)</register>
+    <register id="47" type="uint8" name="ROLL_LOWER_SOFT_LIMIT_1">Angle of the lower bound soft-limiter of the roll (MSB)</register>
+    <register id="48" type="uint8" name="ROLL_UPPER_SOFT_LIMIT_0">Angle of the upper bound soft-limiter of the roll (LSB)</register>
+    <register id="49" type="uint8" name="ROLL_UPPER_SOFT_LIMIT_1">Angle of the upper bound soft-limiter of the roll (MSB)</register>
+    <register id="50" type="uint8" name="PITCH_LOWER_HARD_LIMIT_0">IC-Haus value of the lower bound hard-limiter of the pitch (LSB)</register>
+    <register id="51" type="uint8" name="PITCH_LOWER_HARD_LIMIT_1">IC-Haus value of the lower bound hard-limiter of the pitch (MSB)</register>
+    <register id="52" type="uint8" name="PITCH_UPPER_HARD_LIMIT_0">IC-Haus value of the upper bound hard-limiter of the pitch (LSB)</register>
+    <register id="53" type="uint8" name="PITCH_UPPER_HARD_LIMIT_1">IC-Haus value of the upper bound hard-limiter of the pitch (MSB)</register>
+    <register id="54" type="uint8" name="ROLL_LOWER_HARD_LIMIT_0">IC-Haus value of the lower bound hard-limiter of the roll (LSB)</register>
+    <register id="55" type="uint8" name="ROLL_LOWER_HARD_LIMIT_1">IC-Haus value of the lower bound hard-limiter of the roll (MSB)</register>
+    <register id="56" type="uint8" name="ROLL_UPPER_HARD_LIMIT_0">IC-Haus value of the upper bound hard-limiter of the roll (LSB)</register>
+    <register id="57" type="uint8" name="ROLL_UPPER_HARD_LIMIT_1">IC-Haus value of the upper bound hard-limiter of the roll (MSB)</register>
+
+    <!-- RAM-Register -->
+    <register id="80" type="uint8" name="CONFIG">Configuration register (enable, drive mode, ...)</register>
+        <registerbit registername="CONFIG" bit="0" name="ENABLE_CMD">Enable command</registerbit>
+        <registerbit registername="CONFIG" bit="1" name="SPEED_CTRL">Enable speed control</registerbit>
+        <registerbit registername="CONFIG" bit="2" name="DIRECT_PWM">Enable direct pwm</registerbit>
+        <registerbit registername="CONFIG" bit="5" name="JOINT_CTRL">Enable joint control</registerbit>
+        <registerbit registername="CONFIG" bit="6" name="JOINT_OFFSETS">Enable joint offsets</registerbit>
+        <registerbit registername="CONFIG" bit="7" name="WRITE_SETTINGS">Write settings trigger</registerbit>
+
+    <register id="81" type="uint8" name="ERROR_IGNORE">Register to set error ignore bits</register>
+        <registerbit registername="ERROR_IGNORE" bit="0" name="INIT">Ignore initialization error</registerbit>
+        <registerbit registername="ERROR_IGNORE" bit="2" name="LIMIT">Ignore limit error</registerbit>
+
+    <register id="82" type="uint8" name="DESIRED_PITCH_0">Desired pitch angle (LSB)</register>
+    <register id="83" type="uint8" name="DESIRED_PITCH_1">Desired pitch angle (MSB)</register>
+    <register id="84" type="uint8" name="DESIRED_ROLL_0">Desired roll angle (LSB)</register>
+    <register id="85" type="uint8" name="DESIRED_ROLL_1">Desired roll angle (MSB)</register>
+    <register id="86" type="uint8" name="DESIRED_SPEED_0">Desired (encoder) speed (LSB)</register>
+    <register id="87" type="uint8" name="DESIRED_SPEED_1">Desired (encoder) speed (MSB)</register>
+    <register id="88" type="uint8" name="DESIRED_PITCH_OFFSET_0">Desired pitch angle offset (LSB)</register>
+    <register id="89" type="uint8" name="DESIRED_PITCH_OFFSET_1">Desired pitch angle offset (MSB)</register>
+    <register id="90" type="uint8" name="DESIRED_ROLL_OFFSET_0">Desired roll angle offset (LSB)</register>
+    <register id="91" type="uint8" name="DESIRED_ROLL_OFFSET_1">Desired roll angle offset (MSB)</register>
+    <register id="92" type="uint8" name="DESIRED_POSITION_MOTOR1_0">Desired (encoder) position of motor 1 (bit 0-7)</register>
+    <register id="93" type="uint8" name="DESIRED_POSITION_MOTOR1_1">Desired (encoder) position of motor 1 (bit 8-15)</register>
+    <register id="94" type="uint8" name="DESIRED_POSITION_MOTOR1_2">Desired (encoder) position of motor 1 (bit 16-23)</register>
+    <register id="95" type="uint8" name="DESIRED_POSITION_MOTOR1_3">Desired (encoder) position of motor 1 (bit 24-31)</register>
+    <register id="96" type="uint8" name="MAX_SPEED_0">Maximal (encoder) speed (bit 0-7)</register>
+    <register id="97" type="uint8" name="MAX_SPEED_1">Maximal (encoder) speed (bit 8-15)</register>
+    <register id="98" type="uint8" name="MAX_RATE_0">Maximal (encoder) setpoint rate limiter (bit 0-7)</register>
+    <register id="99" type="uint8" name="MAX_RATE_1">Maximal (encoder) setpoint rate limiter (bit 8-15)</register>
+    <register id="100" type="uint8" name="DIRECT_DIR_MOTOR1">Direct direction of motor 1 (0: forward, 1: backward)</register>
+    <register id="101" type="uint8" name="DIRECT_PWM_MOTOR1_0">Direct pwm of motor 1 (bit 7-0)</register>
+    <register id="102" type="uint8" name="DIRECT_PWM_MOTOR1_1">Direct pwm of motor 1 (bit 9-8)</register>
+    <register id="103" type="uint8" name="DESIRED_POSITION_MOTOR2_0">Desired (encoder) position of motor 2 (bit 0-7)</register>
+    <register id="104" type="uint8" name="DESIRED_POSITION_MOTOR2_1">Desired (encoder) position of motor 2 (bit 8-15)</register>
+    <register id="105" type="uint8" name="DESIRED_POSITION_MOTOR2_2">Desired (encoder) position of motor 2 (bit 16-23)</register>
+    <register id="106" type="uint8" name="DESIRED_POSITION_MOTOR2_3">Desired (encoder) position of motor 2 (bit 24-31)</register>
+    <register id="111" type="uint8" name="DIRECT_DIR_MOTOR2">Direct direction of motor 2 (0: forward, 1: backward)</register>
+    <register id="112" type="uint8" name="DIRECT_PWM_MOTOR2_0">Direct pwm of motor 2 (bit 7-0)</register>
+    <register id="113" type="uint8" name="DIRECT_PWM_MOTOR2_1">Direct pwm of motor 2 (bit 9-8)</register>
+    <register id="114" type="uint8" name="ACTUAL_PITCH_0">Actual pitch angle (LSB)</register>
+    <register id="115" type="uint8" name="ACTUAL_PITCH_1">Actual pitch angle (MSB)</register>
+    <register id="116" type="uint8" name="ACTUAL_ROLL_0">Actual roll angle (LSB)</register>
+    <register id="117" type="uint8" name="ACTUAL_ROLL_1">Actual roll angle (MSB)</register>
+    <register id="118" type="uint8" name="ACTUAL_YAW_0">Actual yaw angle (LSB)</register>
+    <register id="119" type="uint8" name="ACTUAL_YAW_1">Actual yaw angle (MSB)</register>
+
+    <!-- TELEMETRY-Register -->
+    <register id="120" type="uint8" name="STATE">Actual joint state</register>
+        <registerbit registername="STATE" bit="0" name="ENABLE">Motor enable flag</registerbit>
+        <registerbit registername="STATE" bit="1" name="ENABLE_CMD">Enable command</registerbit>
+        <registerbit registername="STATE" bit="2" name="JOINT_OFFSETS">Joint offset flag</registerbit>
+        <registerbit registername="STATE" bit="3" name="INTERPOLATOR">Interpolator flag</registerbit>
+        <registerbit registername="STATE" bit="7" name="TELEMETRY_AVAILABLE">Telemetry available flag</registerbit>
+
+    <register id="122" type="uint8" name="ERROR">Actual joint error state</register>
+        <registerbit registername="ERROR" bit="0" name="INIT">Initialization error</registerbit>
+        <registerbit registername="ERROR" bit="1" name="HARD_LIMIT">(Hard) limit error</registerbit>
+        <registerbit registername="ERROR" bit="7" name="TIMESTAMP_TIMEOUT">timestamp of powered leg did not update for some time</registerbit>
+
+    <register id="123" type="uint8" name="WARNING">Actual joint warning state</register>
+        <registerbit registername="WARNING" bit="0" name="SOFT_LIMIT">Soft limit error</registerbit>
+        <registerbit registername="WARNING" bit="1" name="POSITION">Position error</registerbit>
+
+    <register id="124" type="uint8" name="TEMPERATURE1_0">Temperature 1 (LSB)</register>
+    <register id="125" type="uint8" name="TEMPERATURE1_1">Temperature 1 (MSB)</register>
+    <register id="126" type="uint8" name="TEMPERATURE2_0">Temperature 2 (LSB)</register>
+    <register id="127" type="uint8" name="TEMPERATURE2_1">Temperature 2 (MSB)</register>
+    <register id="128" type="uint8" name="TEMPERATURE3_0">Temperature 3 (LSB)</register>
+    <register id="129" type="uint8" name="TEMPERATURE3_1">Temperature 3 (MSB)</register>
+
+</deviceclass>

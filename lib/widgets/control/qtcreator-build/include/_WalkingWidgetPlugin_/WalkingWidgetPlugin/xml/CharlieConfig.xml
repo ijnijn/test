@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Diese Datei ist eine Idee, wie man Register- und Device-IDs 
+in einer XML-Datei halbwegs schick unterbringen kann... -->
+
+<!-- xml-Kommentare kann man hier natürlich überall einbauen. -->
+
+<system xmlns:xi="http://www.w3.org/2003/XInclude" name="Charlie">
+
+  <!-- Klassen fuer gemeinsame Eigenschaften von Devices -->
+  <xi:include href="deviceclasses/NDLCom.xml" />
+  <xi:include href="deviceclasses/FPGAJoint.xml" />
+  <xi:include href="deviceclasses/BLDCJoint.xml" />
+  <xi:include href="deviceclasses/AnkleJoint.xml" />
+  <xi:include href="deviceclasses/SpineJoint.xml" />
+  <xi:include href="deviceclasses/HeadJoint.xml" />
+  <xi:include href="deviceclasses/mdaq2.xml" />
+  <xi:include href="deviceclasses/DMSBoard_12.xml" />
+  <xi:include href="deviceclasses/PicoBlazeArray.xml" />
+  <xi:include href="deviceclasses/charlie/MotionController_General.xml" />
+  <xi:include href="deviceclasses/charlie/MotionController_Balance.xml" />
+  <xi:include href="deviceclasses/charlie/MotionController_WalkControl.xml" />
+  <xi:include href="deviceclasses/charlie/MotionController_WalkTwoLeggedControl.xml" />
+  <xi:include href="deviceclasses/charlie/MotionController_SendToPc.xml" />
+  <!-- xi:include href="deviceclasses/charlie/MotionController_HeadControl.xml" / -->
+
+  <system name="HighLevel">
+    <device name="ControlGUI" id="1" />
+    <device name="MARS" id="2" />
+    <device name="MotionController" id="3" class="MotionController_General MotionController_SendToPc MotionController_Balance MotionController_WalkControl MotionController_WalkTwoLeggedControl"/>
+    <device name="PicoBlazeArray" id="4" class="NDLCom PicoBlazeArray"/>
+  </system>
+
+  <!-- front left leg/arm (10-19) -->
+  <system name="FLLeg">
+    <device name="FLHipJoint1"  id="10" class="NDLCom FPGAJoint BLDCJoint" />
+    <device name="FLHipJoint2"  id="11" class="NDLCom FPGAJoint BLDCJoint" />
+    <device name="FLHipJoint3"  id="12" class="NDLCom FPGAJoint BLDCJoint" />
+    <device name="FLKneeJoint"  id="13" class="NDLCom FPGAJoint BLDCJoint" />
+    <device name="FLAnkleJoint" id="14" class="NDLCom FPGAJoint AnkleJoint" />
+    <device name="FLToeJoint"   id="15" class="NDLCom FPGAJoint BLDCJoint" />
+    <device name="FLFootSensorBoard1" id="16" class="NDLCom mdaq2" />
+    <device name="FLFootSensorBoard2" id="17" class="NDLCom mdaq2" />
+  </system>
+
+  <!-- front right leg/arm (20-29) -->
+  <system name="FRLeg">
+    <device name="FRHipJoint1"  id="20" class="NDLCom FPGAJoint BLDCJoint" />
+    <device name="FRHipJoint2"  id="21" class="NDLCom FPGAJoint BLDCJoint" />
+    <device name="FRHipJoint3"  id="22" class="NDLCom FPGAJoint BLDCJoint" />
+    <device name="FRKneeJoint"  id="23" class="NDLCom FPGAJoint BLDCJoint" />
+    <device name="FRAnkleJoint" id="24" class="NDLCom FPGAJoint AnkleJoint" />
+    <device name="FRToeJoint"   id="25" class="NDLCom FPGAJoint BLDCJoint" />
+    <device name="FRFootSensorBoard1" id="26" class="NDLCom mdaq2" />
+    <device name="FRFootSensorBoard2" id="27" class="NDLCom mdaq2" />
+  </system>
+
+  <!-- rear left leg/arm (30-39) -->
+  <system name="RLLeg">
+    <device name="RLHipJoint1"  id="30" class="NDLCom FPGAJoint BLDCJoint" />
+    <device name="RLHipJoint2"  id="31" class="NDLCom FPGAJoint BLDCJoint" />
+    <device name="RLHipJoint3"  id="32" class="NDLCom FPGAJoint BLDCJoint" />
+    <device name="RLKneeJoint"  id="33" class="NDLCom FPGAJoint BLDCJoint" />
+    <device name="RLAnkleJoint" id="34" class="NDLCom FPGAJoint AnkleJoint" />
+    <device name="RLToeJoint"   id="35" class="NDLCom FPGAJoint BLDCJoint" />
+    <device name="RLFootSensorBoard1" id="36" class="NDLCom mdaq2" />
+    <device name="RLFootSensorBoard2" id="37" class="NDLCom mdaq2" />
+  </system>
+
+  <!-- rear right leg/arm (40-49) -->
+  <system name="RRLeg">
+    <device name="RRHipJoint1"  id="40" class="NDLCom FPGAJoint BLDCJoint" />
+    <device name="RRHipJoint2"  id="41" class="NDLCom FPGAJoint BLDCJoint" />
+    <device name="RRHipJoint3"  id="42" class="NDLCom FPGAJoint BLDCJoint" />
+    <device name="RRKneeJoint"  id="43" class="NDLCom FPGAJoint BLDCJoint" />
+    <device name="RRAnkleJoint" id="44" class="NDLCom FPGAJoint AnkleJoint" />
+    <device name="RRToeJoint"   id="45" class="NDLCom FPGAJoint BLDCJoint" />
+    <device name="RRFootSensorBoard1" id="46" class="NDLCom mdaq2"/>
+    <device name="RRFootSensorBoard2" id="47" class="NDLCom mdaq2"/>
+  </system>
+
+  <!-- Spine (50-59) -->
+  <system name="Spine">
+    <device name="SpineJoint" id="50" class="NDLCom FPGAJoint SpineJoint" />
+    <device name="SpineSensorBoard" id="51" class="NDLCom mdaq2"/>
+  </system>
+
+  <!-- Head (60) which is located in the MCS -->
+  <system name="Head">
+    <device name="HeadJoint" id="60" class="HeadJoint" />
+  </system>
+
+  <!-- (100-127) debug ids -->
+  <system name="Debug">
+    <device name="SensorCrumb" id="100" />
+    <device name="anadaq7x7"   id="101" />
+    <device name="DMSBoard_11" id="102" />
+    <device name="mdaq"        id="103" />
+    <device name="DMSBoard_12" id="104" />
+    <device name="mdaq2"       id="105" class="NDLCom mdaq2" />
+    <device name="HipJoint1"   id="106" class="NDLCom FPGAJoint BLDCJoint" />
+    <device name="HipJoint2"   id="107" class="NDLCom FPGAJoint BLDCJoint" />
+    <device name="HipJoint3"   id="108" class="NDLCom FPGAJoint BLDCJoint" />
+    <device name="KneeJoint"   id="109" class="NDLCom FPGAJoint BLDCJoint" />
+    <device name="ServoSpine"  id="110" />
+    <device name="DevelMotor"  id="111" class="NDLCom FPGAJoint BLDCJoint" />
+  </system>
+
+  <!-- second address segment (128-254) -->
+  <system name="SeeGrip">
+    <!-- also possible to define bit-fields of different well-formed length'
+    this will allow displaying a suitable editor just for these values. -->
+    <device name="CAM_TCM8230MD" id="129">
+      <register type="uint8" editor="binary" name="cam_control" id="1" >register for bitwise edit</register>
+      <register type="uint8" editor="binary" name="luminosity" id="2" >another one</register>
+      <register type="uint16" editor="binary" name="dogbarf" id="3" >a bigger one</register>
+      <!-- besides registers, some devices may contain one or more <isp_region> which have some things too. -->
+      <isp_region name="software" begin="0x40000000" max_length="1024" prepend_length="true" />
+      <isp_region name="other" begin="0x00000001" comment="blabla" />
+    </device>
+    <device name="SheetMetalHand" id="130" />
+    <device name="BaseBoard" id="131" />
+    <device name="microDMSBoard" id="132" />
+    <device name="CamControl_PSOC" id="133" />
+    <device name="CamControl_FPGA" id="134" />
+    <device name="SensorFusion" id="135" />
+  </system>
+
+  <device name="ERROR" id="0" class="NDLCom" />
+  <device name="BROADCAST" id="255" class="NDLCom" />
+
+</system>

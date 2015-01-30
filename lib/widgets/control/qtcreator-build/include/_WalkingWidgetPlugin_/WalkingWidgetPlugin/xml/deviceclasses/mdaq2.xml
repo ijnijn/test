@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<deviceclass name="mdaq2">
+    <!-- Memory regions and start addresses for user program and/or bootloader -->
+    <isp_region name="Firmware" begin="0x08000000" max_length="501760"/>
+    <isp_region name="Configuration" begin="0x0807A800" max_length="2048"/>
+    <isp_region name="Bootloader" begin="0x0807B000" max_length="20480"/>
+
+    <!-- All static registers are defined here -->
+    <register type="uint8" name="BACKUP" id="1" min="0">0: Idle >0: Trigger backup of important registers to flash memory</register>
+    <register type="uint8" name="DC_EN" id="2" min="0">0: Drift Compensation disabled. >0: Drift Compensation enabled (default).</register>
+    <register type="uint16" name="VOUT_5V" id="3" unit="mV" min="0" max="6000">Measured voltage on 5V output rail</register>
+    <register type="uint16" name="VOUT_DAC" id="4" unit="mV" min="0" max="4096">Voltage at the DAC output</register>
+    <register type="uint16" name="DEF_FREQ" id="5" unit="Hz" min="1">Default calling frequency of Jobs</register>
+    <register type="uint32" name="TERM_RESISTANCE" id="6" unit="Ohm" min="1">Termination resistance at analog inputs</register>
+    <register type="int32" name="RTC_DRIFT" id="7" max="999999" unit="ppm">Real time clock drift in ppm</register>
+
+    <!-- Static registers for Force Torque measurements -->
+    <register type="uint8" name="FT_REMOTE" id="8">0: FT Measurement disabled >0: Id of the receiving node</register>
+    <register type="uint16" name="FT_FREQ" id="9" unit="Hz" min="1">Transmission frequency of new FT data</register>
+    <register type="uint8" name="FT_SENSOR" id="10" min="0">0: undefined >0: See ForceTorqueData.h in RobotConfig</register>
+    <register type="uint8" name="FT_GAIN" id="11" min="0" max="3">Sets amplification of raw signals to 10^{0-3}</register>
+    <register type="uint8" name="FT_OFFSET" id="12" min="0" max="1">1: Trigger offset compensation of FT vector</register>
+    <register type="uint8" name="FT_FILTER_TYPE" id="13" min="0" max="3">0: No Filtering 1: Butterworth 2: Median 3: Moving Average</register>
+    <register type="uint8" name="FT_FILTER_LEN" id="14" min="1">Length of the buffer used for filtering</register>
+    <register type="uint8" name="FT_FILTER_ORDER" id="15" min="1">Order of the butterworth filter</register>
+    <register type="singleFloat" name="FT_FILTER_CUTOFF" id="16">Normalized cutoff frequency of the butterworth filter</register>
+    <register type="singleFloat" name="FT_FILTER_ATT" id="17">Attenuation at cutoff frequency of the butterworth filter</register>
+
+    <!-- Static registers for Virtual Spring Control loop -->
+    <register type="uint8" name="FT_AJC_REMOTE" id="18">0: Virtual springs disabled >0: Id of the receiving node</register>
+    <register type="uint8" name="RESERVED" id="19">Might be used in the future</register>
+    <register type="singleFloat" name="FT_AJC_PITCHCONST" unit="Nm/deg" id="20">Torsion spring constant at pitch DOF</register>
+    <register type="singleFloat" name="FT_AJC_PITCHLIMIT" unit="deg" id="21" min="0" max="180">Allowed range (+/-) of pitch offset</register>
+    <register type="singleFloat" name="FT_AJC_ROLLCONST" unit="Nm/deg" id="22">Torsion spring constant at roll DOF</register>
+    <register type="singleFloat" name="FT_AJC_ROLLLIMIT" unit="deg" id="23" min="0" max="180">Allowed range (+/-) of pitch offset</register>
+    <register type="singleFloat" name="FT_AJC_INERTIA" unit="Nm*s^2" id="24">Moment of inertia seen by the ankle joint</register>
+
+    <!-- Static registers for Sensor Array measurements -->
+    <register type="uint8" name="SA_REMOTE" id="25">0: SA Measurement disabled >0: Id of the receiving node</register>
+    <register type="uint16" name="SA_FREQ" id="26" unit="Hz" min="1">Transmission frequency of new SA data</register>
+    <register type="uint8" name="SA_STATE" id="27" min="0" max="4">Register handling calibration data exchanges (do not use manually)</register>
+    <register type="uint8" name="SA_MODE" id="28" min="0" max="3">0-1: Floating point 2-3: Integer</register>
+    <register type="uint8" name="SA_OUTPUT" id="29" min="0" max="1">0: Conductances 1: Forces</register>
+    <register type="uint32" name="SA_SCALE" id="30" min="1">Scaling of the transmitted values</register>
+    <register type="uint8" name="SA_OFFSET" id="31" min="0" max="1">1: Trigger offset compensation of each taxel</register>
+
+    <!-- Static registers for Scope Job -->
+    <register type="uint8" name="SCOPE_REMOTE" id="32">0: Scope disabled >0: Id of the receiving node</register>
+    <register type="uint16" name="SCOPE_FREQ" id="33" unit="Hz" min="1">Transmission frequency of new Scope data</register>
+    <register type="uint8" name="SCOPE_MODE" id="34" min="0">Bit0-1: 0: Manual select 1: 8CH differential 2: 15CH single-ended</register>
+    <registerbit registername="SCOPE_MODE" bit="7" name="TXRAW">Transmit raw ADC values</registerbit>
+    <register type="uint8" name="SCOPE_IN_POS" id="35" min="0" max="7">Positive input channel (manual select)</register>
+    <register type="uint8" name="SCOPE_IN_NEG" id="36" min="0" max="7">Negative input channel (manual select)</register>
+    <register type="uint8" name="SCOPE_OUT" id="37" min="0" max="7">Output channel (manual select)</register>
+    <register type="uint8" name="SCOPE_GAIN" id="38" min="0" max="7">Output channel (manual select)</register>
+
+    <!-- Static registers for TC77 Job -->
+    <register type="uint8" name="TC77_REMOTE" id="39">0: TC77 disabled >0: Id of the receiving node</register>
+    <register type="uint16" name="TC77_FREQ" id="40" unit="Hz" min="1">Transmission frequency of new temperature data</register>
+
+    <!-- Static registers for LIS3LV02DQ Job -->
+    <register type="uint8" name="LIS3_REMOTE" id="41">0: LIS3 disabled >0: Id of the receiving node</register>
+    <register type="uint16" name="LIS3_FREQ" id="42" unit="Hz" min="1">Transmission frequency of new acceleration data</register>
+    <register type="uint8" name="LIS3_SCALE" id="43">0: +/- 2G range >0: +/- 6G range</register>
+
+    <!-- Static registers for SI1120 Job -->
+    <register type="uint8" name="SI1120_REMOTE" id="44">0: SI1120 disabled >0: Id of the receiving node</register>
+    <register type="uint16" name="SI1120_FREQ" id="45" unit="Hz" min="1">Transmission frequency of new distance data</register>
+    <register type="uint8" name="SI1120_CALIBRATE" id="46">0->1: (Re-)calibration of the SI1120 distance sensor</register>
+
+    <!-- Static registers for Angle measurements -->
+    <register type="uint8" name="ANGLE_REMOTE" id="47">0: Angle measurements disabled >0: Id of the receiving node</register>
+    <register type="uint16" name="ANGLE_FREQ" id="48" unit="Hz" min="1">Transmission frequency of new angular data</register>
+    <register type="uint8" name="ANGLE_OUTPUT" id="49">0: foot angles </register>
+    <register type="uint8" name="ANGLE_OFFSET" id="50">0->1: Trigger offset compensation</register>
+
+    <!-- Static registers for Support Polygon    -->
+    <register type="uint8" name="POLY_REMOTE" id="51">0: Polygon handler disabled >0: Id of the receiving node</register>
+    <register type="int32" name="POLY_THRESH" id="52">Threshold for polygon calculations</register>
+
+    <!-- Static registers for Phase Detection    -->
+    <register type="uint8" name="PD_REMOTE" id="53">0: Phase detection disabled >0: Id of the receiving node</register>
+    <register type="singleFloat" name="PD_LOW" id="54">Lower threshold in N</register>
+    <register type="singleFloat" name="PD_HIGH" id="55">Higher threshold in N</register>
+
+    <!-- Static registers for measuring adc data used by the ft-dose -->
+    <register type="singleFloat" name="FT_OFFSET_0" id="56">FT: Offset for Fx</register>
+    <register type="singleFloat" name="FT_OFFSET_1" id="57">FT: Offset for Fy</register>
+    <register type="singleFloat" name="FT_OFFSET_2" id="58">FT: Offset for Fz</register>
+    <register type="singleFloat" name="FT_OFFSET_3" id="59">FT: Offset for Tx</register>
+    <register type="singleFloat" name="FT_OFFSET_4" id="60">FT: Offset for Ty</register>
+    <register type="singleFloat" name="FT_OFFSET_5" id="61">FT: Offset for Tz</register>
+
+    <!-- Static offsets for ichaus angle measurements -->
+    <register type="int32" name="ANGLE_OFFSET_0" id="62">ANGLE: Offset 0 (sign denotes orientation, abs is the offset)</register>
+    <register type="int32" name="ANGLE_OFFSET_1" id="63">ANGLE: Offset 1 (sign denotes orientation, abs is the offset)</register>
+    <register type="int32" name="ANGLE_OFFSET_2" id="64">ANGLE: Offset 2 (sign denotes orientation, abs is the offset)</register>
+    <register type="int32" name="ANGLE_OFFSET_3" id="65">ANGLE: Offset 3 (sign denotes orientation, abs is the offset)</register>
+
+    <!-- Rotation angles in XYZ notation for force-torque vector transformation -->
+    <register type="singleFloat" name="FT_ANGLE_X" id="66">FT: Angle X for XYZ Trafo in deg</register>
+    <register type="singleFloat" name="FT_ANGLE_Y" id="67">FT: Angle Y for XYZ Trafo in deg</register>
+    <register type="singleFloat" name="FT_ANGLE_Z" id="68">FT: Angle Z for XYZ Trafo in deg</register>
+
+    <!-- Rotation angles in XYZ notation for accelerometer transformation -->
+    <register type="singleFloat" name="LIS3_ANGLE_X" id="69">LIS3: Angle X for XYZ Trafo in deg</register>
+    <register type="singleFloat" name="LIS3_ANGLE_Y" id="70">LIS3: Angle Y for XYZ Trafo in deg</register>
+    <register type="singleFloat" name="LIS3_ANGLE_Z" id="71">LIS3: Angle Z for XYZ Trafo in deg</register>
+</deviceclass>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<deviceclass name="HeadJoint">
+    <register id="1" type="uint8" name="CONFIG">Configuration/State register (enable, drive mode, ...)</register>
+    <registerbit registername="CONFIG" bit="0" name="ENABLE">Enable command</registerbit>
+    <registerbit registername="CONFIG" bit="1" name="SERVO_DIRECT">Servo direct commands</registerbit>
+    <registerbit registername="CONFIG" bit="7" name="TELEMETRY_AVAILABLE">Telemetry available flag</registerbit>
+
+    <register id="2" type="uint16" name="POSITION_SERVO1">Desired position of servo 1</register>
+    <register id="3" type="uint16" name="POSITION_SERVO2">Desired position of servo 2</register>
+    <register id="4" type="uint16" name="POSITION_SERVO3">Desired position of servo 3</register>
+    <register id="5" type="uint16" name="POSITION_SERVO4">Desired position of servo 4</register>
+    <register id="6" type="uint16" name="POSITION_SERVO5">Desired position of servo 5</register>
+    <register id="7" type="uint16" name="POSITION_SERVO6">Desired position of servo 6</register>
+</deviceclass>

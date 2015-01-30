@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+<!-- http://www.w3schools.com/schema/schema_complex.asp -->
+
+<xs:element name="system" type="system"/>
+
+<!-- inside a system are arbritrary numbers of deviceclass, devices, registers
+     or again other systems. also the order is not important. credits too
+     http://stackoverflow.com/questions/415955/xsd-how-to-describe-an-unordered-set-of-element-types-where-the-first-element/416011#416011-->
+<xs:complexType name="system" mixed="true">
+  <xs:sequence>
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="deviceclass" type="deviceclass" />
+      <xs:element name="device" type="device" />
+      <xs:element name="register" type="register" />
+      <xs:element name="system" type="system" />
+    </xs:choice>
+  </xs:sequence>
+  <xs:attribute name="name" type="xs:Name" />
+  <xs:anyAttribute namespace="##other" processContents="lax"/>
+</xs:complexType>
+
+<!-- register types are beschränkt to certain FundamentalTypes, each one
+     decoded as a string -->
+<xs:simpleType name="type">
+  <xs:restriction base="xs:string">
+    <xs:enumeration value="uint8" />
+    <xs:enumeration value="int8" />
+    <xs:enumeration value="uint16" />
+    <xs:enumeration value="int16" />
+    <xs:enumeration value="uint32" />
+    <xs:enumeration value="int32" />
+    <xs:enumeration value="singleFloat" />
+    <xs:enumeration value="doubleFloat" />
+  </xs:restriction>
+</xs:simpleType>
+
+<!-- additionally planned is to provide a "slider" edit. not implemented yet... -->
+<xs:simpleType name="editor">
+  <xs:restriction base="xs:string">
+    <xs:enumeration value="decimal" />
+    <xs:enumeration value="hexadecimal" />
+    <xs:enumeration value="binary" />
+  </xs:restriction>
+</xs:simpleType>
+
+<!-- a isp_region is flashable via NDLCom-packets. binary will be transmitted
+     via representation-packet directly to the device. each device has to know
+     and handle the packets, so this is a very special thing! -->
+<xs:complexType name="isp_region">
+  <xs:simpleContent>
+    <xs:extension base="xs:string"><!-- Description -->
+      <xs:attribute name="name" type="xs:Name" use="required" />
+      <xs:attribute name="begin" type="xs:string" use="required" />
+      <xs:attribute name="max_length" type="xs:integer" />
+      <xs:attribute name="prepend_length" type="xs:boolean" default="false" />
+      <xs:attribute name="comment" type="xs:string" />
+    </xs:extension>
+  </xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="registercount">
+  <xs:attribute name="type" type="xs:string" use="required" />
+  <xs:attribute name="count" type="xs:integer" use="required" />
+</xs:complexType>
+
+<xs:complexType name="register">
+  <xs:simpleContent>
+    <xs:extension base="xs:string"><!-- Description -->
+      <xs:attribute name="type" type="type" use="required" />
+      <xs:attribute name="name" type="xs:Name" />
+      <xs:attribute name="id" type="xs:string" use="required" />
+      <xs:attribute name="min" type="xs:decimal" />
+      <xs:attribute name="max" type="xs:decimal" />
+      <xs:attribute name="default" type="xs:decimal" />
+      <xs:attribute name="unit" type="xs:string" />
+      <xs:attribute name="editor" type="editor" default="decimal" />
+      <xs:anyAttribute namespace="##other" processContents="lax"/>
+    </xs:extension>
+  </xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="registerbit">
+  <xs:simpleContent>
+    <xs:extension base="xs:string"><!-- Description -->
+      <xs:attribute name="registername" type="xs:string" use="required" />
+      <xs:attribute name="bit" type="xs:integer" use="required" />
+      <xs:attribute name="name" type="xs:Name" />
+    </xs:extension>
+  </xs:simpleContent>
+</xs:complexType>
+
+<xs:complexType name="registervalue">
+  <xs:simpleContent>
+    <xs:extension base="xs:string"><!-- Description -->
+      <xs:attribute name="registername" type="xs:string" use="required" />
+      <xs:attribute name="value" type="xs:integer" use="required" />
+      <xs:attribute name="name" type="xs:Name" />
+    </xs:extension>
+  </xs:simpleContent>
+</xs:complexType>
+
+<!-- each deviceclass should have at least one register defined, zero or more
+     isp_regions are allowed. this does not make that much sense. but this does
+     not matter in the moment. later this may cause confusion. because
+     confusion sometimes matters, this whole line will add a litte more -->
+<xs:complexType name="deviceclass" mixed="true">
+  <xs:sequence>
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="isp_region" type="isp_region" />
+      <xs:element name="registercount" type="registercount" />
+      <xs:element name="register" type="register" />
+      <xs:element name="registerbit" type="registerbit" />
+      <xs:element name="registervalue" type="registervalue" />
+    </xs:choice>
+  </xs:sequence>
+  <xs:attribute name="name" type="xs:Name" use="required" />
+  <xs:attribute name="extends" type="xs:Name" />
+  <xs:anyAttribute namespace="##other" processContents="lax"/>
+</xs:complexType>
+
+<!-- devices may contain any number of private registers which are not defined
+     in the deviceclass aswell as any number of "isp_region" -->
+<!-- how to test for uniqueness of id inside this class? -->
+<xs:complexType name="device" mixed="true" >
+  <xs:sequence>
+    <xs:element minOccurs="0" maxOccurs="unbounded" name="registercount" type="registercount" />
+    <xs:element minOccurs="0" maxOccurs="unbounded" name="register" type="register" />
+    <xs:element minOccurs="0" maxOccurs="unbounded" name="isp_region" type="isp_region" />
+  </xs:sequence>
+  <xs:attribute name="class" type="xs:string" />
+  <xs:attribute name="name" type="xs:Name" use="required" />
+  <xs:attribute name="id" type="xs:integer" use="required" />
+  <!-- mem_resolution determines the maximum size in bit of the data at a
+register id. in german:
+
+Es soll die Frage beantworten:
+Wieviel bit adressiert eine Register-ID = (hier) Register-Adresse? Für den FPGA 8 bit. In jedem Register i liegen 8 bit. Eine int32 braucht also 4 adressen/register.
+Was man jetzt als default nimmt.... ich weiß nicht. Irgendetwas größer gleich 8 Byte = mem_resolution=64 bit um das bisherige Verhalten zu bekommen, weil:
+Unsere zur Zeit max. Register-Größe ist durch die Typen auf 8 Byte festgelegt.
+
+Siehe auch: http://en.wikipedia.org/wiki/Word_%28computer_architecture%29#Word_and_byte_addressing und die Tabelle
+
+TODO: the "default" can only be used if this xsd-file is included
+in the main xml... this does not work currently...  -->
+  <xs:attribute name="mem_resolution" type="xs:integer" use="optional" default="64"/>
+  <xs:anyAttribute namespace="##other" processContents="lax"/>
+</xs:complexType>
+
+</xs:schema>
+
+<!-- vim: set shiftwidth=2: -->

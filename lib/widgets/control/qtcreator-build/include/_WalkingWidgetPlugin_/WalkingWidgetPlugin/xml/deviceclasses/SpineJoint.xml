@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<deviceclass name="SpineJoint"> <!-- extends="NDLCom"-->
+    <!-- ISP memory regions -->
+    <isp_region name="FPGA" begin="0x0" max_length="4194304"/>
+    <isp_region name="Software" begin="0x800000" max_length="1048576" prepend_length="true"/>
+
+    <!-- Number of registers -->
+    <registercount type="ROM" count="80" />
+    <registercount type="RAM" count="40" />
+    <registercount type="RO" count="20" />
+
+    <!-- ROM-Register -->
+    <register id="8" type="uint8" name="POSITION_PGAIN_0">Proportional Value for the Position Controller (LSB)</register>
+    <register id="9" type="uint8" name="POSITION_PGAIN_1">Proportional Value for the Position Controller (MSB)</register>
+    <register id="10" type="uint8" name="POSITION_IGAIN_0">Integral Value for the Position Controller (LSB)</register>
+    <register id="11" type="uint8" name="POSITION_IGAIN_1">Integral Value for the Position Controller (MSB)</register>
+    <register id="12" type="uint8" name="POSITION_DGAIN_0">Damping Value for the Position Controller (LSB)</register>
+    <register id="13" type="uint8" name="POSITION_DGAIN_1">Damping Value for the Position Controller (MSB)</register>
+    <register id="14" type="uint8" name="POSITION_BGAIN_0">Maximal I-Value in the Position Controller (LSB)</register>
+    <register id="15" type="uint8" name="POSITION_BGAIN_1">Maximal I-Value in the Position Controller (MSB)</register>
+    <register id="16" type="uint8" name="SPEED_PGAIN_0">Proportional Value for the Speed Controller (LSB)</register>
+    <register id="17" type="uint8" name="SPEED_PGAIN_1">Proportional Value for the Speed Controller (MSB)</register>
+    <register id="18" type="uint8" name="SPEED_SHAPER_0">Integral Value for the Speed Controller (LSB)</register>
+    <register id="19" type="uint8" name="SPEED_SHAPER_1">Integral Value for the Speed Controller (MSB)</register>
+    <register id="36" type="uint8" name="MOTOR1_ICHAUS_OFFSET_0">iC-Haus offset of motor 1 (LSB)</register>
+    <register id="37" type="uint8" name="MOTOR1_ICHAUS_OFFSET_1">iC-Haus offset of motor 1 (MSB)</register>
+    <register id="38" type="uint8" name="MOTOR2_ICHAUS_OFFSET_0">iC-Haus offset of motor 2 (LSB)</register>
+    <register id="39" type="uint8" name="MOTOR2_ICHAUS_OFFSET_1">iC-Haus offset of motor 2 (MSB)</register>
+    <register id="40" type="uint8" name="MOTOR3_ICHAUS_OFFSET_0">iC-Haus offset of motor 3 (LSB)</register>
+    <register id="41" type="uint8" name="MOTOR3_ICHAUS_OFFSET_1">iC-Haus offset of motor 4 (MSB)</register>
+    <register id="42" type="uint8" name="MOTOR4_ICHAUS_OFFSET_0">iC-Haus offset of motor 4 (LSB)</register>
+    <register id="43" type="uint8" name="MOTOR4_ICHAUS_OFFSET_1">iC-Haus offset of motor 5 (MSB)</register>
+    <register id="44" type="uint8" name="MOTOR5_ICHAUS_OFFSET_0">iC-Haus offset of motor 5 (LSB)</register>
+    <register id="45" type="uint8" name="MOTOR5_ICHAUS_OFFSET_1">iC-Haus offset of motor 5 (MSB)</register>
+    <register id="46" type="uint8" name="MOTOR6_ICHAUS_OFFSET_0">iC-Haus offset of motor 6 (LSB)</register>
+    <register id="47" type="uint8" name="MOTOR6_ICHAUS_OFFSET_1">iC-Haus offset of motor 6 (MSB)</register>
+    <register id="48" type="uint8" name="MOTOR1_ICHAUS_GCC">iC-Haus gcc (amplitude ratio) configuration value for motor 1</register>
+    <register id="49" type="uint8" name="MOTOR1_ICHAUS_VOSS">iC-Haus voss (sine offset) configuration value for motor 1</register>
+    <register id="50" type="uint8" name="MOTOR1_ICHAUS_VOSC">iC-Haus vosc (cosine offset) configuration value for motor 1</register>
+    <register id="51" type="uint8" name="MOTOR2_ICHAUS_GCC">iC-Haus gcc (amplitude ratio) configuration value for motor 2</register>
+    <register id="52" type="uint8" name="MOTOR2_ICHAUS_VOSS">iC-Haus voss (sine offset) configuration value for motor 2</register>
+    <register id="53" type="uint8" name="MOTOR2_ICHAUS_VOSC">iC-Haus vosc (cosine offset) configuration value for motor 2</register>
+    <register id="54" type="uint8" name="MOTOR3_ICHAUS_GCC">iC-Haus gcc (amplitude ratio) configuration value for motor 3</register>
+    <register id="55" type="uint8" name="MOTOR3_ICHAUS_VOSS">iC-Haus voss (sine offset) configuration value for motor 3</register>
+    <register id="56" type="uint8" name="MOTOR3_ICHAUS_VOSC">iC-Haus vosc (cosine offset) configuration value for motor 3</register>
+    <register id="57" type="uint8" name="MOTOR4_ICHAUS_GCC">iC-Haus gcc (amplitude ratio) configuration value for motor 4</register>
+    <register id="58" type="uint8" name="MOTOR4_ICHAUS_VOSS">iC-Haus voss (sine offset) configuration value for motor 4</register>
+    <register id="59" type="uint8" name="MOTOR4_ICHAUS_VOSC">iC-Haus vosc (cosine offset) configuration value for motor 4</register>
+    <register id="60" type="uint8" name="MOTOR5_ICHAUS_GCC">iC-Haus gcc (amplitude ratio) configuration value for motor 5</register>
+    <register id="61" type="uint8" name="MOTOR5_ICHAUS_VOSS">iC-Haus voss (sine offset) configuration value for motor 5</register>
+    <register id="62" type="uint8" name="MOTOR5_ICHAUS_VOSC">iC-Haus vosc (cosine offset) configuration value for motor 5</register>
+    <register id="63" type="uint8" name="MOTOR6_ICHAUS_GCC">iC-Haus gcc (amplitude ratio) configuration value for motor 6</register>
+    <register id="64" type="uint8" name="MOTOR6_ICHAUS_VOSS">iC-Haus voss (sine offset) configuration value for motor 6</register>
+    <register id="65" type="uint8" name="MOTOR6_ICHAUS_VOSC">iC-Haus vosc (cosine offset) configuration value for motor 6</register>
+
+    <!-- RAM-Register -->
+    <register id="80" type="uint8" name="CONFIG">Configuration register (enable, drive mode, ...)</register>
+        <registerbit registername="CONFIG" bit="0" name="ENABLE_CMD">Enable command</registerbit>
+        <registerbit registername="CONFIG" bit="2" name="DIRECT_PWM">Enable direct pwm</registerbit>
+        <registerbit registername="CONFIG" bit="4" name="STOP">Stop device bit</registerbit>
+        <registerbit registername="CONFIG" bit="5" name="RESET">Reset device bit</registerbit>
+        <registerbit registername="CONFIG" bit="6" name="PROM_INIT_DONE">Prom init done bit</registerbit>
+        <registerbit registername="CONFIG" bit="7" name="WRITE_SETTINGS">Write settings trigger</registerbit>
+
+    <register id="81" type="uint8" name="ERROR_IGNORE">Register to set error ignore bits</register>
+        <registerbit registername="ERROR_IGNORE" bit="0" name="INIT">Ignore initialization error</registerbit>
+
+    <register id="84" type="uint8" name="DESIRED_POSITION_MOTOR1_0">Desired (encoder) position of motor 1 (LSB)</register>
+    <register id="85" type="uint8" name="DESIRED_POSITION_MOTOR1_1">Desired (encoder) position of motor 1 (MSB)</register>
+    <register id="86" type="uint8" name="DESIRED_POSITION_MOTOR2_0">Desired (encoder) position of motor 2 (LSB)</register>
+    <register id="87" type="uint8" name="DESIRED_POSITION_MOTOR2_1">Desired (encoder) position of motor 2 (MSB)</register>
+    <register id="88" type="uint8" name="DESIRED_POSITION_MOTOR3_0">Desired (encoder) position of motor 3 (LSB)</register>
+    <register id="89" type="uint8" name="DESIRED_POSITION_MOTOR3_1">Desired (encoder) position of motor 3 (MSB)</register>
+    <register id="90" type="uint8" name="DESIRED_POSITION_MOTOR4_0">Desired (encoder) position of motor 4 (LSB)</register>
+    <register id="91" type="uint8" name="DESIRED_POSITION_MOTOR4_1">Desired (encoder) position of motor 4 (MSB)</register>
+    <register id="92" type="uint8" name="DESIRED_POSITION_MOTOR5_0">Desired (encoder) position of motor 5 (LSB)</register>
+    <register id="93" type="uint8" name="DESIRED_POSITION_MOTOR5_1">Desired (encoder) position of motor 5 (MSB)</register>
+    <register id="94" type="uint8" name="DESIRED_POSITION_MOTOR6_0">Desired (encoder) position of motor 6 (LSB)</register>
+    <register id="95" type="uint8" name="DESIRED_POSITION_MOTOR6_1">Desired (encoder) position of motor 6 (MSB)</register>
+    <register id="96" type="uint8" name="MAX_SPEED_0">Maximal (encoder) speed (bit 0-7)</register>
+    <register id="97" type="uint8" name="MAX_SPEED_1">Maximal (encoder) speed (bit 8-15)</register>
+    <register id="98" type="uint8" name="MAX_RATE_0">Maximal (encoder) setpoint rate limiter (bit 0-7)</register>
+    <register id="99" type="uint8" name="MAX_RATE_1">Maximal (encoder) setpoint rate limiter (bit 8-15)</register>
+    <register id="100" type="uint8" name="DIRECT_DIR_MOTOR1">Direct direction of motor 1 (0: forward, 1: backward)</register>
+    <register id="101" type="uint8" name="DIRECT_PWM_MOTOR1_0">Direct pwm of motor 1 (bit 7-0)</register>
+    <register id="102" type="uint8" name="DIRECT_PWM_MOTOR1_1">Direct pwm of motor 1 (bit 9-8)</register>
+    <register id="103" type="uint8" name="DIRECT_DIR_MOTOR2">Direct direction of motor 2 (0: forward, 1: backward)</register>
+    <register id="104" type="uint8" name="DIRECT_PWM_MOTOR2_0">Direct pwm of motor 2 (bit 7-0)</register>
+    <register id="105" type="uint8" name="DIRECT_PWM_MOTOR2_1">Direct pwm of motor 2 (bit 9-8)</register>
+    <register id="106" type="uint8" name="DIRECT_DIR_MOTOR3">Direct direction of motor 3 (0: forward, 1: backward)</register>
+    <register id="107" type="uint8" name="DIRECT_PWM_MOTOR3_0">Direct pwm of motor 3 (bit 7-0)</register>
+    <register id="108" type="uint8" name="DIRECT_PWM_MOTOR3_1">Direct pwm of motor 3 (bit 9-8)</register>
+    <register id="109" type="uint8" name="DIRECT_DIR_MOTOR4">Direct direction of motor 4 (0: forward, 1: backward)</register>
+    <register id="110" type="uint8" name="DIRECT_PWM_MOTOR4_0">Direct pwm of motor 4 (bit 7-0)</register>
+    <register id="111" type="uint8" name="DIRECT_PWM_MOTOR4_1">Direct pwm of motor 4 (bit 9-8)</register>
+    <register id="112" type="uint8" name="DIRECT_DIR_MOTOR5">Direct direction of motor 5 (0: forward, 1: backward)</register>
+    <register id="113" type="uint8" name="DIRECT_PWM_MOTOR5_0">Direct pwm of motor 5 (bit 7-0)</register>
+    <register id="114" type="uint8" name="DIRECT_PWM_MOTOR5_1">Direct pwm of motor 5 (bit 9-8)</register>
+    <register id="115" type="uint8" name="DIRECT_DIR_MOTOR6">Direct direction of motor 6 (0: forward, 1: backward)</register>
+    <register id="116" type="uint8" name="DIRECT_PWM_MOTOR6_0">Direct pwm of motor 6 (bit 7-0)</register>
+    <register id="117" type="uint8" name="DIRECT_PWM_MOTOR6_1">Direct pwm of motor 6 (bit 9-8)</register>
+
+    <!-- ReadOnly-Register -->
+    <register id="120" type="uint8" name="STATE">Actual joint state</register>
+        <registerbit registername="STATE" bit="0" name="ENABLE">Motor enable flag</registerbit>
+        <registerbit registername="STATE" bit="1" name="ENABLE_CMD">Enable command</registerbit>
+        <registerbit registername="STATE" bit="7" name="TELEMETRY_AVAILABLE">Telemetry available flag</registerbit>
+
+    <register id="122" type="uint8" name="ERROR">Actual joint error state</register>
+        <registerbit registername="ERROR" bit="0" name="INIT">Initialization error</registerbit>
+        <registerbit registername="ERROR" bit="7" name="TIMESTAMP_TIMEOUT">timestamp of powered leg did not update for some time</registerbit>
+
+    <register id="123" type="uint8" name="WARNING">Actual joint warning state</register>
+        <registerbit registername="WARNING" bit="1" name="POSITION">Position error</registerbit>
+
+    <register id="124" type="uint8" name="TEMPERATURE_MOTORDRIVER1_0">Temperature Motor Driver 1 (LSB)</register>
+    <register id="125" type="uint8" name="TEMPERATURE_MOTORDRIVER1_1">Temperature Motor Driver 1 (MSB)</register>
+    <register id="126" type="uint8" name="TEMPERATURE_MOTORDRIVER2_0">Temperature Motor Driver 2 (LSB)</register>
+    <register id="127" type="uint8" name="TEMPERATURE_MOTORDRIVER2_1">Temperature Motor Driver 2 (MSB)</register>
+    <register id="128" type="uint8" name="TEMPERATURE_MOTORDRIVER3_0">Temperature Motor Driver 3 (LSB)</register>
+    <register id="129" type="uint8" name="TEMPERATURE_MOTORDRIVER3_1">Temperature Motor Driver 3 (MSB)</register>
+    <register id="130" type="uint8" name="TEMPERATURE_MOTORDRIVER4_0">Temperature Motor Driver 4 (LSB)</register>
+    <register id="131" type="uint8" name="TEMPERATURE_MOTORDRIVER4_1">Temperature Motor Driver 4 (MSB)</register>
+    <register id="132" type="uint8" name="TEMPERATURE_MOTORDRIVER5_0">Temperature Motor Driver 5 (LSB)</register>
+    <register id="133" type="uint8" name="TEMPERATURE_MOTORDRIVER5_1">Temperature Motor Driver 5 (MSB)</register>
+    <register id="134" type="uint8" name="TEMPERATURE_MOTORDRIVER6_0">Temperature Motor Driver 6 (LSB)</register>
+    <register id="135" type="uint8" name="TEMPERATURE_MOTORDRIVER6_1">Temperature Motor Driver 6 (MSB)</register>
+    <register id="136" type="uint8" name="TEMPERATURE_FPGA_0">Temperature FPGA (LSB)</register>
+    <register id="137" type="uint8" name="TEMPERATURE_FPGA_1">Temperature FPGA (MSB)</register>
+
+
+</deviceclass>

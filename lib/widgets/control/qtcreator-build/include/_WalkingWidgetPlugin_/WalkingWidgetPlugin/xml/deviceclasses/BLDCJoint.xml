@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<deviceclass name="BLDCJoint"> <!-- extends="NDLCom" -->
+    <!-- Memory regions and start addresses for user program and/or bootloader -->
+    <isp_region name="FPGA" begin="0x0" max_length="1500000"/>
+
+    <!-- number of registers and length of telemetry data -->
+    <registercount type="ROM" count="80" />
+    <registercount type="RAM" count="40" />
+    <registercount type="RO" count="10" />
+
+    <!-- ROM-Register -->
+    <register id="5" type="uint8" name="GEAR_VERSION">Gear Ratio (x:1)</register>
+    <register id="6" type="uint8" name="ICHAUS_OFFSET_0">IC-Haus offset (LSB)</register>
+    <register id="7" type="uint8" name="ICHAUS_OFFSET_1">IC-Haus offset (MSB)</register>
+    <register id="8" type="uint8" name="INVERT_ICHAUS">Flag to invert IC-Haus measurement</register>
+    <register id="9" type="uint8" name="POSITION_PGAIN_0">Proportional Value for the Position Controller (LSB)</register>
+    <register id="10" type="uint8" name="POSITION_PGAIN_1">Proportional Value for the Position Controller (MSB)</register>
+    <register id="17" type="uint8" name="SPEED_PGAIN_0">Proportional Value for the Speed Controller (LSB)</register>
+    <register id="18" type="uint8" name="SPEED_PGAIN_1">Proportional Value for the Speed Controller (MSB)</register>
+    <register id="25" type="uint8" name="LOWER_SOFT_LIMIT_0">Encoder value of the lower bound soft-limiter (LSB)</register>
+    <register id="26" type="uint8" name="LOWER_SOFT_LIMIT_1">Encoder value of the lower bound soft-limiter (MSB)</register>
+    <register id="27" type="uint8" name="UPPER_SOFT_LIMIT_0">Encoder value of the upper bound soft-limiter (LSB)</register>
+    <register id="28" type="uint8" name="UPPER_SOFT_LIMIT_1">Encoder value fo the upper bound soft-limiter (MSB)</register>
+    <register id="29" type="uint8" name="LOWER_HARD_LIMIT_0">IC-Haus value of the lower bound hard-limiter (LSB)</register>
+    <register id="30" type="uint8" name="LOWER_HARD_LIMIT_1">IC-Haus value of the lower bound hard-limiter (MSB)</register>
+    <register id="31" type="uint8" name="UPPER_HARD_LIMIT_0">IC-Haus value of the upper bound hard-limiter (LSB)</register>
+    <register id="32" type="uint8" name="UPPER_HARD_LIMIT_1">IC-Haus value fo the upper bound hard-limiter (MSB)</register>
+    <register id="48" type="uint8" name="POSSPD_PGAIN_0">Proportional Value of the new PID-Controller (bit 0-7)</register>
+    <register id="49" type="uint8" name="POSSPD_PGAIN_1">Proportional Value of the new PID-Controller (bit 8-15)</register>
+    <register id="50" type="uint8" name="POSSPD_PGAIN_2">Proportional Value of the new PID-Controller (bit 16-23)</register>
+    <register id="51" type="uint8" name="POSSPD_PGAIN_3">Proportional Value of the new PID-Controller (bit 24-31)</register>
+    <register id="52" type="uint8" name="POSSPD_IGAIN_0">Integral Value of the new PID-Controller (bit 0-7)</register>
+    <register id="53" type="uint8" name="POSSPD_IGAIN_1">Integral Value of the new PID-Controller (bit 8-15)</register>
+    <register id="54" type="uint8" name="POSSPD_IGAIN_2">Integral Value of the new PID-Controller (bit 16-23)</register>
+    <register id="55" type="uint8" name="POSSPD_IGAIN_3">Integral Value of the new PID-Controller (bit 24-31)</register>
+    <register id="56" type="uint8" name="POSSPD_DGAIN_0">Damping Value of the new PID-Controller (bit 0-7)</register>
+    <register id="57" type="uint8" name="POSSPD_DGAIN_1">Damping Value of the new PID-Controller (bit 8-15)</register>
+    <register id="58" type="uint8" name="POSSPD_DGAIN_2">Damping Value of the new PID-Controller (bit 16-23)</register>
+    <register id="59" type="uint8" name="POSSPD_DGAIN_3">Damping Value of the new PID-Controller (bit 24-31)</register>
+    <register id="60" type="uint8" name="POSSPD_BGAIN_0">b-Value of the new PID-Controller (bit 0-7)</register>
+    <register id="61" type="uint8" name="POSSPD_BGAIN_1">b-Value of the new PID-Controller (bit 8-15)</register>
+    <register id="62" type="uint8" name="POSSPD_BGAIN_2">b-Value of the new PID-Controller (bit 16-23)</register>
+    <register id="63" type="uint8" name="POSSPD_BGAIN_3">b-Value of the new PID-Controller (bit 24-31)</register>
+    <register id="64" type="uint8" name="POSSPD_CGAIN_0">c-Value of the new PID-Controller (bit 0-7)</register>
+    <register id="65" type="uint8" name="POSSPD_CGAIN_1">c-Value of the new PID-Controller (bit 8-15)</register>
+    <register id="66" type="uint8" name="POSSPD_CGAIN_2">c-Value of the new PID-Controller (bit 16-23)</register>
+    <register id="67" type="uint8" name="POSSPD_CGAIN_3">c-Value of the new PID-Controller (bit 24-31)</register>
+    <register id="68" type="uint8" name="ICHAUS_GCC">iC-Haus gcc (amplitude ratio) configuration value</register>
+    <register id="69" type="uint8" name="ICHAUS_VOSS">iC-Haus voss (sine offset) configuration value</register>
+    <register id="70" type="uint8" name="ICHAUS_VOSC">iC-Haus vosc (cosine offset) configuration value</register>
+
+    <!-- RAM-Register -->
+    <register id="80" type="uint8" name="CONFIG">Configuration register (enable, drive mode, ...)</register>
+        <registerbit registername="CONFIG" bit="0" name="ENABLE_CMD">Enable command</registerbit>
+        <registerbit registername="CONFIG" bit="1" name="INTERPOLATOR">Enable interpolator</registerbit>
+        <registerbit registername="CONFIG" bit="2" name="DIRECT_PWM">Enable direct pwm</registerbit>
+        <registerbit registername="CONFIG" bit="6" name="OPEN_BRAKE">Open the brake</registerbit>
+        <registerbit registername="CONFIG" bit="7" name="WRITE_SETTINGS">Write settings trigger</registerbit>
+
+    <register id="81" type="uint8" name="ERROR_IGNORE">Register to set error ignore bits</register>
+        <registerbit registername="ERROR_IGNORE" bit="0" name="INIT">Ignore initialization errors</registerbit>
+        <registerbit registername="ERROR_IGNORE" bit="1" name="LIMIT">Ignore limit errors</registerbit>
+
+    <register id="82" type="uint8" name="DESIRED_POSITION_0">Desired position (LSB)</register>
+    <register id="83" type="uint8" name="DESIRED_POSITION_1">Desired  position (MSB)</register>
+    <register id="84" type="uint8" name="MAX_SPEED_0">Maximal (encoder) speed (bit 0-7)</register>
+    <register id="85" type="uint8" name="MAX_SPEED_1">Maximal (encoder) speed (bit 8-15)</register>
+    <register id="86" type="uint8" name="MAX_RATE_0">Maximal (encoder) rate (bit 0-7)</register>
+    <register id="87" type="uint8" name="MAX_RATE_1">Maximal (encoder) rate (bit 8-15)</register>
+    <register id="88" type="uint8" name="DIRECT_DIR">Direct direction (0: forward, 1: backward)</register>
+    <register id="89" type="uint8" name="DIRECT_PWM_0">Direct pwm (bit 7-0)</register>
+    <register id="90" type="uint8" name="DIRECT_PWM_1">Direct pwm (bit 9-8)</register>
+
+    <!-- TELEMETRY-Register -->
+    <register id="120" type="uint8" name="STATE">Actual joint state</register>
+        <registerbit registername="STATE" bit="0" name="ENABLE">Motor enable flag</registerbit>
+        <registerbit registername="STATE" bit="1" name="ENABLE_CMD">Enable command</registerbit>
+        <registerbit registername="STATE" bit="3" name="INTERPOLATOR">Interpolator flag</registerbit>
+        <registerbit registername="STATE" bit="7" name="TELEMETRY_AVAILABLE">Telemetry available flag</registerbit>
+
+    <register id="122" type="uint8" name="ERROR">Actual joint error state</register>
+        <registerbit registername="ERROR" bit="0" name="INIT">Initialization error</registerbit>
+        <registerbit registername="ERROR" bit="1" name="HARD_LIMIT">(Hard) limit error</registerbit>
+        <registerbit registername="ERROR" bit="7" name="TIMESTAMP_TIMEOUT">timestamp of powered leg did not update for some time</registerbit>
+
+    <register id="123" type="uint8" name="WARNING">Actual joint warning state</register>
+        <registerbit registername="WARNING" bit="0" name="SOFT_LIMIT">Soft limit error</registerbit>
+        <registerbit registername="WARNING" bit="1" name="POSITION">Position error</registerbit>
+
+    <register id="124" type="uint8" name="TEMPERATURE1_0">Temperature 1 (LSB)</register>
+    <register id="125" type="uint8" name="TEMPERATURE1_1">Temperature 1 (MSB)</register>
+    <register id="126" type="uint8" name="TEMPERATURE2_0">Temperature 2 (LSB)</register>
+    <register id="127" type="uint8" name="TEMPERATURE2_1">Temperature 2 (MSB)</register>
+    <register id="128" type="uint8" name="TEMPERATURE3_0">Temperature 3 (LSB)</register>
+    <register id="129" type="uint8" name="TEMPERATURE3_1">Temperature 3 (MSB)</register>
+
+</deviceclass>

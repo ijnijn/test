@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<deviceclass name="MotionController_WalkControl">
+    <register id="1000" type="uint8" name="GAIT">Gait (STAND(0), CRAWL(1), TIMED(2))</register>
+    <register id="1001" type="uint8" name="HANDLE_DETECTED_STATE">Handle detected state (Early-Touchdown)</register>
+    <register id="1002" min="0" max="1" default="0" type="uint8" name="LAST_WALKING_STATE_AS_DETECTED">Use last walking state as detected state (ignoring sensor data)</register>
+    <register id="1011" type="uint16" name="CYCLE_TIME">Cycle time (in ms)</register>
+    <register id="1012" type="uint16" name="MAX_DISTANCE_STANCE">Max. distance of feet (robot frame) during stance phase (in mm)</register>
+    <register id="1013" type="int16" name="SWING_POS_OFFSET_X">x-position offset in leg swing phase (in mm)</register>
+    <register id="1014" type="int16" name="SWING_POS_OFFSET_Y">y-position offset in leg swing phase (in mm)</register>
+    <register id="1015" type="int16" name="SWING_POS_OFFSET_Z">z-position offset in leg swing phase (in mm)</register>
+    <register id="1016" min="-200" max="200" default="0" type="singleFloat" name="DCSOP_SHIFT_X">x value for a dcsop shift (in mm)</register>
+    <register id="1017" min="-200" max="200" default="0" type="singleFloat" name="DCSOP_SHIFT_Y">y value for a dcsop shift (in mm)</register>
+    <register id="1018" min="-200" max="600" default="0" type="singleFloat" name="DCSOP_SHIFT_Z">z value for a dcsop shift (in mm)</register>
+    <register id="1019" min="-20" max="20" default="0" type="singleFloat" name="BODY_ROTATION_YAW">yaw (z-Axis) body rotation (in degree)</register>
+    <register id="1020" min="-100" max="20" default="0" type="singleFloat" name="BODY_ROTATION_PITCH">pitch (y-Axis) body rotation (in degree)</register>
+    <register id="1021" min="-20" max="20" default="0" type="singleFloat" name="BODY_ROTATION_ROLL">roll (x-Axis) body rotation (in degree)</register>
+    <register id="1022" type="int16" name="CENTER_POS_FRONT_X">x-distance from front feet to robot center (in mm)</register>
+    <register id="1023" type="int16" name="CENTER_POS_FRONT_ABS_Y">y-distance from front feet to robot center (in mm)</register>
+    <register id="1024" type="int16" name="CENTER_POS_REAR_X">x-distance from rear feet to robot center (in mm)</register>
+    <register id="1025" type="int16" name="CENTER_POS_REAR_ABS_Y">y-distance from front feet to robot center (in mm)</register>
+    <register id="1026" type="int16" name="CENTER_POS_Z">Distance from ground to robot center (in mm)</register>
+    <register id="1027" type="int16" name="CENTER_POS_Z_DELTA_FL">Difference FL to common CENTER_POS_Z (in mm)</register>
+    <register id="1028" type="int16" name="CENTER_POS_Z_DELTA_FR">Difference FR to common CENTER_POS_Z (in mm)</register>
+    <register id="1029" type="int16" name="CENTER_POS_Z_DELTA_RL">Difference RL to common CENTER_POS_Z (in mm)</register>
+    <register id="1030" type="int16" name="CENTER_POS_Z_DELTA_RR">Difference RR to common CENTER_POS_Z (in mm)</register>
+    <register id="1031" type="int16" name="CENTER_POS_FRONT_Z">Z-distance from front feet to robot center (in mm)</register>
+    <register id="1032" type="int16" name="CENTER_POS_REAR_Z">Z-distance from rear feet to robot center (in mm)</register>
+    <register id="1033" min="-300" max="800" default="0" type="singleFloat" name="BODY_OVER_GROUND_SHIFT_Z">z value for the bodyheight over the support plane (in mm)</register>
+    <register id="1035" type="singleFloat" name="SPINE_OFFSET_ROT_YAW">Spine: hip2body rotation offset yaw (in deg)</register>
+    <register id="1036" type="singleFloat" name="SPINE_OFFSET_ROT_PITCH">Spine: hip2body rotation offset pitch (in deg)</register>
+    <register id="1037" type="singleFloat" name="SPINE_OFFSET_ROT_ROLL">Spine: hip2body rotation offset roll (in deg)</register>
+
+    <register id="1041" type="singleFloat" name="REAR_PITCH_TOUCHDOWN">Pitch angle of the rear feet to ground at touchdown (in deg)</register>
+    <register id="1042" type="singleFloat" name="REAR_PITCH_TOEOFF">Pitch angle of the rear feet to ground at toe-off(in deg)</register>
+    <register id="1043" type="singleFloat" name="REAR_PITCH_MIDSWING">Pitch angle of the rear feet to ground at mid-swing(in deg)</register>
+    <register id="1044" type="singleFloat" name="FRONT_YAW">Yaw angle of the feet (angle is for left side, right is mirrored. in degree.)</register>
+    <register id="1045" type="uint8" name="JOINT_ANGLES_REQUEST_FILTER">Filter joint angles request (0: off, 1: on)</register>
+    <register id="1046" type="uint8" name="JOINT_ANGLES_REQUEST_FILTER_SLOWER">Allow slower velocity  by filtered joint angles request (0: off, 1: on)</register>
+    <register id="1047" type="uint8" name="JOINT_ANGLES_REQUEST_FILTER_FASTER">Allow a little bit faster velocity by filtered joint angles request (0: off, 1: on)</register>
+    <register id="1048" type="uint8" name="USE_ANKLE_JOINT_OFFSETS">Use ankle joint offsets for the virtual spring (0: off, 1: on)</register>
+    <register id="1049" min="-50" max="50" default="0" type="singleFloat" name="SPINE_OFFSET_TRANS_X">Spine: hip2body translation offset in x (in mm)</register>
+    <register id="1050" min="-50" max="50" default="0" type="singleFloat" name="SPINE_OFFSET_TRANS_Y">Spine: hip2body translation offset in y (in mm)</register>
+    <register id="1051" min="-50" max="50" default="0" type="singleFloat" name="SPINE_OFFSET_TRANS_Z">Spine: hip2body translation offset in z (in mm)</register>
+    <register id="1052" min="0.0" max="1.0" default="0.0" type="singleFloat" name="GAIT_TIMED_SWINGUP_PROGRESS_FL">Timed walking gait: trigger swing-up phase of leg FL at this cycle progress value.</register>
+    <register id="1053" min="0.0" max="1.0" default="0.0" type="singleFloat" name="GAIT_TIMED_SWINGUP_PROGRESS_FR">Timed walking gait: trigger swing-up phase of leg FR at this cycle progress value.</register>
+    <register id="1054" min="0.0" max="1.0" default="0.0" type="singleFloat" name="GAIT_TIMED_SWINGUP_PROGRESS_RL">Timed walking gait: trigger swing-up phase of leg RL at this cycle progress value.</register>
+    <register id="1055" min="0.0" max="1.0" default="0.0" type="singleFloat" name="GAIT_TIMED_SWINGUP_PROGRESS_RR">Timed walking gait: trigger swing-up phase of leg RR at this cycle progress value.</register>
+    <register id="1056" min="0.0" max="1.0" default="0.25" type="singleFloat" name="GAIT_TIMED_SWING_FRACTION">Timed walking gait: fraction of walking cycle for swing-phase (ie. 0.25 for crawl).</register>
+
+    <register id="1064" min="-1000.0" max="0.0" default="-530.0" type="singleFloat" name="FLOOR_ESTIMATOR_FIXED_FLOOR_OFFSET_Z">FloorEstimator:fixedFloorOffsetZ</register>
+    <register id="1065" min="0" max="1" default="0" type="uint8" name="FLOOR_ESTIMATOR_ENABLE_DEBUG_PLOTS">FloorEstimation: enable debug plots</register>
+    <register id="1066" type="singleFloat" name="FLOOR_ESTIMATOR_HYPER_PLANE_ESTIMATION">MotionFloorEstimatorModule:hyperPlaneEstimation</register>
+    <register id="1067" min="1" max="100" default="5" type="uint8" name="FLOOR_ESTIMATOR_FILTER_LENGTH">MotionFloorEstimatorModule:filterLength</register>
+
+    <register id="1070" min="-200" max="200" default="0" type="singleFloat" name="FL_OFFSET_X">FL offset x [mm]</register>
+    <register id="1071" min="-200" max="200" default="0" type="singleFloat" name="FL_OFFSET_Y">FL offset y [mm]</register>
+    <register id="1072" min="-200" max="200" default="0" type="singleFloat" name="FL_OFFSET_Z">FL offset z [mm]</register>
+    <register id="1073" min="-200" max="200" default="0" type="singleFloat" name="FR_OFFSET_X">FR offset x [mm]</register>
+    <register id="1074" min="-200" max="200" default="0" type="singleFloat" name="FR_OFFSET_Y">FR offset y [mm]</register>
+    <register id="1075" min="-200" max="200" default="0" type="singleFloat" name="FR_OFFSET_Z">FR offset z [mm]</register>
+    <register id="1076" min="-200" max="200" default="0" type="singleFloat" name="RL_OFFSET_X">RL offset x [mm]</register>
+    <register id="1077" min="-200" max="200" default="0" type="singleFloat" name="RL_OFFSET_Y">RL offset y [mm]</register>
+    <register id="1078" min="-200" max="200" default="0" type="singleFloat" name="RL_OFFSET_Z">RL offset z [mm]</register>
+    <register id="1079" min="-200" max="200" default="0" type="singleFloat" name="RR_OFFSET_X">RR offset x [mm]</register>
+    <register id="1080" min="-200" max="200" default="0" type="singleFloat" name="RR_OFFSET_Y">RR offset y [mm]</register>
+    <register id="1081" min="-200" max="200" default="0" type="singleFloat" name="RR_OFFSET_Z">RR offset z [mm]</register>
+
+    <register id="1100" type="singleFloat" name="SPINE_SUPPORT_SCALE_X">Spine: scale supporting x (-1..1)</register>
+    <register id="1101" type="singleFloat" name="SPINE_SUPPORT_SCALE_Y">Spine: scale supporting y (-1..1)</register>
+    <register id="1102" type="singleFloat" name="SPINE_SUPPORT_SCALE_Z">Spine: scale supporting z (-1..1)</register>
+    <register id="1103" type="singleFloat" name="SPINE_SUPPORT_SCALE_YAW">Spine: scale supporting yaw (-1..1)</register>
+    <register id="1104" type="singleFloat" name="SPINE_SUPPORT_SCALE_PITCH">Spine: scale supporting pitch (-1..1)</register>
+    <register id="1105" type="singleFloat" name="SPINE_SUPPORT_SCALE_ROLL">Spine: scale supporting roll (-1..1)</register>
+    <register id="1112" type="singleFloat" name="SPINE_SUPPORT_HIPSHOULDER_WEIGHT">Spine: weight for spine support between Hip/Shoulder (0..1)</register>
+</deviceclass>

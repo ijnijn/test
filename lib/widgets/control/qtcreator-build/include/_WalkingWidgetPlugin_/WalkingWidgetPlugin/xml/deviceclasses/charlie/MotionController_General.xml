@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<deviceclass name="MotionController_General">
+    <register id="0" type="uint8" name="MOTION_MODE">MotionMode: 0=Stop, 1=Walking, 2=JointSpaceSequence, 4=TwoLegged, 5=StandUp, 6=SitDown, 7=RandomWalk</register>
+        <registervalue registername="MOTION_MODE" value="0" name="STOP">No Motion</registervalue>
+        <registervalue registername="MOTION_MODE" value="1" name="WALKING_FOUR_LEGGED">Four Legged Walking</registervalue>
+        <registervalue registername="MOTION_MODE" value="2" name="JOINT_SPACE_SEQUENCE">JointSpaceSequence</registervalue>
+        <registervalue registername="MOTION_MODE" value="3" name="DRIVING">Driving</registervalue>
+        <registervalue registername="MOTION_MODE" value="4" name="WALKING_TWO_LEGGED">Two legged Walking</registervalue>
+        <registervalue registername="MOTION_MODE" value="5" name="STAND_UP">Standup</registervalue>
+        <registervalue registername="MOTION_MODE" value="6" name="SIT_DOWN">SitDown</registervalue>
+        <registervalue registername="MOTION_MODE" value="7" name="RANDOM_WALK_DEMO">random walk demo</registervalue>
+    <register id="1" type="uint32" name="MOTORS_ENABLE">Bit mask to enable(1) or disable(0) the motors</register>
+    <register id="2" type="uint8" name="CLKSYNC_ENABLE">Config for Clock Syncronisation</register>
+        <registerbit registername="CLKSYNC_ENABLE" bit="0" name="PINGPONG">Enable RTT measurements</registerbit>
+        <registerbit registername="CLKSYNC_ENABLE" bit="1" name="SYNC">Enable remote clock syncronisation</registerbit>
+        <registerbit registername="CLKSYNC_ENABLE" bit="2" name="DELAYADJ">Enable delay adjustment (needs bit 1 to be set)</registerbit>
+        <registerbit registername="CLKSYNC_ENABLE" bit="3" name="DEBUG">Enable debug output on console</registerbit>
+        <registerbit registername="CLKSYNC_ENABLE" bit="4" name="RESET">Reset all values</registerbit>
+        <registerbit registername="CLKSYNC_ENABLE" bit="5" name="INFO">Send ClockInfo packets to GUI</registerbit>
+    <register id="3" type="uint32" name="CLKSYNC_PERIOD">A value in units of 10 ms for the period between a RTT measurement and a SYNC packet</register>
+    <register id="4" type="uint8" name="LOGGING_NORMAL_ENABLE">LoggingThread: Enable normal log by writing 1, disable by writing 0. See stdout for more info</register>
+    <register id="5" type="uint8" min="0" max="1" default="0" name="LOGGING_EMERGENCY_TRIGGER">LoggingThread: write a 1 to trigger saving the last x seconds of logdata</register>
+    <register id="6" type="singleFloat" min="0" max="15" default="5" name="LOGGING_EMERGENCY_KEEPTIME_SECONDS">LoggingThread: keeptime for emergency log in seconds</register>
+    <register id="7" type="uint8" name="POSTURE_DEMO_ENABLE">write one to enable posture demo, write 0 to trigger abort prematurely</register>
+    <register id="8" type="uint8" name="SEQUENCE_DEMO">'1' stand up motion, '2' go down motion and '0' to abort</register>
+        <registervalue registername="SEQUENCE_DEMO" value="0" name="IDLE">No demo</registervalue>
+        <registervalue registername="SEQUENCE_DEMO" value="1" name="STANDUP">Stand up motion</registervalue>
+        <registervalue registername="SEQUENCE_DEMO" value="2" name="GODOWN">Go down motion</registervalue>
+        <registervalue registername="SEQUENCE_DEMO" value="3" name="STANDINGSPINE">Standing spine motion</registervalue>
+        <registervalue registername="SEQUENCE_DEMO" value="4" name="WIVE">Wive motion</registervalue>
+        <registervalue registername="SEQUENCE_DEMO" value="5" name="BOW">Bow motion</registervalue>
+        <registervalue registername="SEQUENCE_DEMO" value="6" name="LIFT_ARM">Lift the arm for the two-legged demo (hack for the Halleneinweihung)</registervalue>
+        <registervalue registername="SEQUENCE_DEMO" value="7" name="PUT_DOWN_ARM">Put down the arm (hack for the Halleneinweihung)</registervalue>
+        <registervalue registername="SEQUENCE_DEMO" value="254" name="STOP">Stop actual demo</registervalue>
+        <registervalue registername="SEQUENCE_DEMO" value="255" name="ABORT">Abort actual demo</registervalue>
+    <register id="9" type="uint8" name="KRAFTAUSGLEICH">zero to disable and delete stored offsets. one for updating operation, two for normal operation after update</register>
+    <register id="10" type="singleFloat" name="KRAFTAUSGLEICH_MAX_OFFSET">max offset in mm</register>
+    <register id="11" type="singleFloat" name="KRAFTAUSGLEICH_GAIN">offset gain (0.005 works)</register>
+
+    <register id="12" type="uint8" min="0" max="1" default="0" name="HEAD_CONTROL_DIRECT">Head control direct</register>
+    <register id="13" type="uint8" min="0" max="4" default="0" name="RANDOM_WALK_LEG_ID">LegId for RandomWalk</register>
+    <register id="14" type="uint8" min="0" max="1" default="0" name="GLOBAL_SUPPORT_POLYGON_REFERENCE_FRAME">0 for grav, 1 for rest</register>
+</deviceclass>

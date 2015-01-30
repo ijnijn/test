@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<deviceclass name="MotionController_Balance">
+	<register id="1500" type="singleFloat" name="BALANCE_ENABLE"> Balance enable (0:off,  1:enable)</register>
+    <register id="1501" type="uint8" name="BALANCE_ENABLE_PLOT">Balance:EnablePlots (0:off) </register>
+
+    <register id="1505" type="singleFloat" name="BALANCE_SCALING_X">Balance:Scaling of shift (X)</register>
+    <register id="1506" type="singleFloat" name="BALANCE_SCALING_Y">Balance:Scaling of shift (Y)</register>
+    <register id="1507" type="singleFloat" name="BALANCE_SCALING_Z">Balance:Scaling of shift (Z)</register>
+
+    <register id="1508" type="singleFloat" name="BALANCE_SCALING_PITCH">Balance:Scaling of rotation (Pitch/mm)</register>
+    <register id="1509" type="singleFloat" name="BALANCE_SCALING_ROLL">Balance:Scaling of rotation (Roll/mm)</register>
+
+    <register id="1510" type="singleFloat" name="BALANCE_OFFSET_X">Balance: Offset gain in x</register>
+    <register id="1511" type="singleFloat" name="BALANCE_OFFSET_Y">Balance: Offset gain in y</register>
+    <register id="1512" type="singleFloat" name="BALANCE_OFFSET_Z">Balance: Offset gain in z</register>
+    <register id="1513" type="singleFloat" name="BALANCE_DAMPING_X">Balance: Damping in x</register>
+    <register id="1514" type="singleFloat" name="BALANCE_DAMPING_Y">Balance: Damping in y</register>
+    <register id="1515" type="singleFloat" name="BALANCE_DAMPING_Z">Balance: Damping in z</register>
+    <register id="1516" type="singleFloat" name="BALANCE_DISTU_GAIN_X">Balance: Disturbance gain in x</register>
+    <register id="1517" type="singleFloat" name="BALANCE_DISTU_GAIN_Y">Balance: Disturbance gain in y</register>
+    <register id="1518" type="singleFloat" name="BALANCE_DISTU_GAIN_Z">Balance: Disturbance gain in z</register>
+</deviceclass>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<deviceclass name="MotionController_MotionControl">
+    <register id="1045" type="uint8" name="JOINT_ANGLES_REQUEST_FILTER">Filter joint angles request (0: off, 1: on)</register>
+    <register id="1046" type="uint8" name="JOINT_ANGLES_REQUEST_FILTER_SLOWER">Allow slower velocity  by filtered joint angles request (0: off, 1: on)</register>
+    <register id="1047" type="uint8" name="JOINT_ANGLES_REQUEST_FILTER_FASTER">Allow a little bit faster velocity by filtered joint angles request (0: off, 1: on)</register>
+ster>
+</deviceclass>

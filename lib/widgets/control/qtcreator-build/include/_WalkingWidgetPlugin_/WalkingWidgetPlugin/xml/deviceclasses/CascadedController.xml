@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<deviceclass name="CascadedController">
+    
+<!--     ROM REGISTERS      -->    
+    
+    <register id="32"  type="uint32" name="POS_P">Proportional gain for the position control loop</register>
+    <register id="36"  type="uint32" name="POS_I">Integral gain for the position control loop</register>
+    <register id="40"  type="uint32" name="POS_D">Derivative gain for the position control loop</register>
+    
+    <register id="44"  type="uint32" name="VEL_P">Proportional gain for the velocity control loop</register>
+    <register id="48"  type="uint32" name="VEL_I">Integral gain for the velocity control loop</register>
+    <register id="52"  type="uint32" name="VEL_D">Derivative gain for the velocity control loop</register>
+    
+    <register id="56"  type="uint32" name="CUR_P">Proportional gain for the current control loop</register>
+    <register id="60"  type="uint32" name="CUR_I">Integral gain for the current control loop</register>
+    <register id="64"  type="uint32" name="CUR_D">Derivative gain for the current control loop</register>
+    
+    <register id="68"  type="uint16" name="POS_DEAD_ZONE">Dead zone for the position controller</register>
+    <register id="70"  type="uint16" name="VEL_DEAD_ZONE">Dead zone for the velocity controller</register>
+    <register id="72"  type="uint16" name="CUR_DEAD_ZONE">Dead zone for the current controller</register>
+    
+    <register id="74"  type="uint16" name="POS_MAX_ERROR_INTEGRAL">Maximum integral value for position control loop</register>
+    <register id="76"  type="uint16" name="VEL_MAX_ERROR_INTEGRAL">Maximum integral value for velocity control loop</register>
+    <register id="78"  type="uint16" name="CUR_MAX_ERROR_INTEGRAL">Maximum integral value for current control loop</register>
+    
+    <register id="80"  type="uint16" name="POS_MAX_CTRL_VAL">Maximum output of the position control loop</register>
+    <register id="82"  type="uint16" name="VEL_MAX_CTRL_VAL">Maximum output of the velocity control loop</register>
+    <register id="84"  type="uint16" name="CUR_MAX_CTRL_VAL">Maximum output of the current controll loop</register>
+    
+    <register id="86"  type="int16" name="POS_MIN">Minimum permissible position</register>
+    <register id="88"  type="int16" name="POS_MAX">Maximum permissible position</register>
+    <register id="90"  type="int16" name="POS_MIN_HARD_LIMIT">Position lower bound hard-limit</register>
+    <register id="92"  type="int16" name="POS_MAX_HARD_LIMIT">Position upper bound hard-limit</register>
+    
+    <register id="94"  type="uint16" name="VEL_MAX">Maximum permissible velocity</register>
+    <register id="96"  type="uint16" name="VEL_MAX_HARD_LIMIT">Absolute velocity upper bound hard-limit</register>
+    
+    <register id="98"  type="uint16" name="CUR_MAX">Maximum permissible current</register>
+    <register id="100" type="uint16" name="CUR_MAX_HARD_LIMIT">Absolute current upper bound hard-limit</register>
+    
+    <register id="102" type="uint8" name="CTRL_MODE">Sets Controlmode: 0=SETPWM, 1=CTRLCUR, 2=CTRLVEL_CC, 3=CTRLPOS_CC, 4=CTRLVEL, 5=CTRLPOS, 9=CTRLACC_CTC, 11=CTRLVEL_CTC, 19=CTRLPOS_CTC</register>
+    
+        
+<!--     RAM REGISTERS      -->    
+     
+    <register id="256" type="int16" name="POS_REF">Position Reference</register>
+    <register id="258" type="int16" name="VEL_REF">Velocity Reference</register>
+    <register id="260" type="int16" name="ACC_REF">Acceleration Reference</register>
+    <register id="262" type="int16" name="CUR_REF">Current Reference</register>
+    <register id="264" type="int16" name="PWM_REF">PWM Reference</register>
+    
+   
+<!--     RO REGISTERS      -->
+
+    <register id="512" type="uint8" name="ACTIVE_SATURATIONS">Shows which saturaturations of control values are reached</register>
+</deviceclass>

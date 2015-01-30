@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Diese Datei ist eine Idee, wie man Register- und Device-IDs 
+in einer XML-Datei halbwegs schick unterbringen kann... -->
+
+<!-- xml-Kommentare kann man hier natürlich überall einbauen. -->
+
+<system xmlns:xi="http://www.w3.org/2003/XInclude" name="AILA">
+
+  <!-- Klassen fuer gemeinsame Eigenschaften von Devices -->
+  <xi:include href="deviceclasses/NDLCom.xml" />
+  <xi:include href="deviceclasses/FPGAJoint.xml" />
+  <xi:include href="deviceclasses/AILAJoint.xml" />
+  <xi:include href="deviceclasses/CascadedController.xml" />
+  <xi:include href="deviceclasses/LinkDynamics.xml" />
+  <xi:include href="deviceclasses/DMSBoard_12.xml" />
+
+  <system name="HighLevel">
+    <device name="ControlGUI" id="1" />
+  </system>
+
+   <!-- Arm1 200-208 -->
+  <system name="ArmConf">
+    <device name="ArmJntUnconfigured"  id="200" mem_resolution="8" class="NDLCom FPGAJoint AILAJoint CascadedController LinkDynamics" />
+  </system>                                                                       
+
+  <system name="ArmR">                                                            
+    <device name="ArmRJnt0"  id="201" mem_resolution="8" class="NDLCom FPGAJoint AILAJoint CascadedController LinkDynamics" />
+    <device name="ArmRJnt1"  id="202" mem_resolution="8" class="NDLCom FPGAJoint AILAJoint CascadedController LinkDynamics" />
+    <device name="ArmRJnt2"  id="203" mem_resolution="8" class="NDLCom FPGAJoint AILAJoint CascadedController LinkDynamics" />
+    <device name="ArmRJnt3"  id="204" mem_resolution="8" class="NDLCom FPGAJoint AILAJoint CascadedController LinkDynamics" />
+    <device name="ArmRJnt4"  id="205" mem_resolution="8" class="NDLCom FPGAJoint AILAJoint CascadedController LinkDynamics" />
+    <device name="ArmRJnt5"  id="206" mem_resolution="8" class="NDLCom FPGAJoint AILAJoint CascadedController LinkDynamics" />
+    <device name="ArmRJnt6"  id="207" mem_resolution="8" class="NDLCom FPGAJoint AILAJoint CascadedController LinkDynamics" />
+    <device name="ArmRJnt7"  id="208" mem_resolution="8" class="NDLCom FPGAJoint AILAJoint CascadedController LinkDynamics" />
+  </system>
+  
+  <system name="ArmL">
+    <device name="ArmLJnt0"  id="209" mem_resolution="8" class="NDLCom FPGAJoint AILAJoint CascadedController LinkDynamics" />
+    <device name="ArmLJnt1"  id="210" mem_resolution="8" class="NDLCom FPGAJoint AILAJoint CascadedController LinkDynamics" />
+    <device name="ArmLJnt2"  id="211" mem_resolution="8" class="NDLCom FPGAJoint AILAJoint CascadedController LinkDynamics" />
+    <device name="ArmLJnt3"  id="212" mem_resolution="8" class="NDLCom FPGAJoint AILAJoint CascadedController LinkDynamics" />
+    <device name="ArmLJnt4"  id="213" mem_resolution="8" class="NDLCom FPGAJoint AILAJoint CascadedController LinkDynamics" />
+    <device name="ArmLJnt5"  id="214" mem_resolution="8" class="NDLCom FPGAJoint AILAJoint CascadedController LinkDynamics" />
+    <device name="ArmLJnt6"  id="215" mem_resolution="8" class="NDLCom FPGAJoint AILAJoint CascadedController LinkDynamics" />
+    <device name="ArmLJnt7"  id="216" mem_resolution="8" class="NDLCom FPGAJoint AILAJoint CascadedController LinkDynamics" />
+  </system>
+
+  <device name="ERROR" id="0" class="NDLCom" />
+  <device name="BROADCAST" id="255" class="NDLCom" />
+
+</system>

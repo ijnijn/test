@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<deviceclass name="NDLCom">
+    <register type="uint8" name="NODE_ID" id="0">Current node id</register>
+</deviceclass>

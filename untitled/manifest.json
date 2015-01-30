@@ -1,0 +1,15 @@
+{
+    "name": "com.ubuntu.developer.username.untitled",
+    "description": "description of untitled",
+    "framework": "ubuntu-sdk-14.04-qml",
+    "architecture": "all",
+    "title": "untitled",
+    "hooks": {
+        "untitled": {
+            "apparmor": "untitled.json",
+            "desktop": "untitled.desktop"
+        }
+    },
+    "version": "0.1",
+    "maintainer": ""
+}

@@ -1,0 +1,20 @@
+<deviceclass name="DMSBoard_12">
+    <!-- All static registers are defined here -->
+    <register type="uint8" name="BOARD_ID" id="0" min="1" max="254">Current device id. Resides in Flash memory</register>
+    <register type="uint16" name="VOUT_5V" id="1" unit="mV" min="0" max="6000">Measured voltage on 5V output rail</register>
+    <register type="uint8" name="UNUSED_0" id="2">Unused static register (inserted for compatibility)</register>
+    <register type="uint8" name="UNUSED_1" id="3">Unused static register (inserted for compatibility)</register>
+    <register type="uint8" name="UNUSED_2" id="4">Unused static register (inserted for compatibility)</register>
+    <!-- Static registers for Force Torque measurements -->
+    <register type="uint8" name="UNUSED_3" id="5">Unused static register (inserted for compatibility)</register>
+    <register type="uint16" name="FT_FREQ" id="6" unit="Hz" min="1">Transmission frequency of new FT data</register>
+    <register type="uint8" name="FT_SENSOR" id="7" min="0" max="5">0: undefined 1: FT11129 2: FT11481 3: FT11483 4: FT11484 5: FTSpine</register>
+    <register type="uint8" name="FT_GAIN" id="8" min="0" max="3">Sets amplification of raw signals to 10^{0-3}</register>
+    <register type="uint8" name="FT_OFFSET" id="9" min="0" max="1">1: Trigger offset compensation of FT vector</register>
+    <register type="uint8" name="FT_FILTER_TYPE" id="10" min="0" max="3">0: No Filtering 1: Butterworth 2: Median 3: Moving Average</register>
+    <register type="uint8" name="FT_FILTER_LEN" id="11" min="1">Length of the buffer used for filtering</register>
+    <register type="uint8" name="FT_FILTER_ORDER" id="12" min="1">Order of the butterworth filter</register>
+    <register type="singleFloat" name="FT_FILTER_CUTOFF" id="13">Normalized cutoff frequency of the butterworth filter</register>
+    <register type="singleFloat" name="FT_FILTER_ATT" id="14">Attenuation at cutoff frequency of the butterworth filter</register>
+    <!-- NOTE: There is a TC77 job on the DMSBoard_12, but it does not use the same registers. Maybe sometime there will be the same job :/ -->
+</deviceclass>

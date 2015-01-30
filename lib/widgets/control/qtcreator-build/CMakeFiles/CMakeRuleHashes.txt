@@ -1,0 +1,4 @@
+# Hashes of file build rules.
+e93329b3ec64fb50848457d0c626b859 src/moc_WalkingWidgetPlugin.cxx
+ca934f1673db722433df13e98cb18eea src/moc_WalkingWidgetPluginPlugin.cxx
+3bd19d4376307f177c0bb057902e23c5 src/qrc_resources.cxx

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<deviceclass name="AILAJoint"> <!-- extends="NDLCom" -->
+    <!-- Memory regions and start addresses for user program and/or bootloader -->
+    <isp_region name="FPGA" begin="0x0" max_length="1500000"/>
+
+    <!-- number of registers and length of telemetry data -->
+    <registercount type="ROM" count="152" />
+    <registercount type="RAM" count="16" />
+    <registercount type="RO" count="44" />
+
+    <!-- ROM-Register -->
+    <register id="5"  type="uint8" name="HALL_MAPPING">Integer 0 to 5, selects one of the 6 possibilities</register>
+    <register id="6"  type="uint8" name="GEAR_VERSION">Gear Ratio (x:1)</register>    
+    <register id="7"  type="uint8" name="CUR_SAMPLE_DELAY">Wait this many samples after PWM trigger (bits 6-0), disable triggered sampling (bit 7)</register>
+    
+    <register id="8" type="uint16" name="TORQUE2I_CONST">Motor torque times this is motor current (LSB)</register>
+    
+    <register id="10"  type="uint16" name="OPTO_TICKS_PER_MOTOR_ROT">Number of Ticks on optical encoder disc</register>
+    
+    <register id="12"  type="uint16" name="ICHAUS_ROT_TICKS_PER_JOINT_ROT">IC Haus ticks per joint rotation (unsigned)</register>
+    <register id="14" type="int16" name="ICHAUS_OFFSET">IC-Haus offset, signed ticks</register>
+    <register id="16" type="uint8" name="ICHAUS_GCC">iC-Haus gcc (amplitude ratio) configuration value</register>    
+    <register id="17" type="uint8" name="ICHAUS_VOSS">iC-Haus voss (sine offset) configuration value</register>
+    <register id="18" type="uint8" name="ICHAUS_VOSC">iC-Haus vosc (cosine offset) configuration value</register>
+    
+    <register id="19" type="uint8" name="CUR_FILTER_DAMPING">Filter damping setting x -> damping 2**-x (bits 4-0) for current</register>
+    <register id="20" type="uint8" name="VEL_FILTER_DAMPING">Filter damping setting x -> damping 2**-x (bits 4-0) for velocity</register>
+    <register id="21" type="uint8" name="ACC_FILTER_DAMPING">Filter damping setting x -> damping 2**-x (bits 4-0) for acceleration</register>
+    
+    <register id="22" type="uint16" name="CONFIG_NV">Control Direction Inversion of sensors and signals (Hall, Opto, PosCtrl, Haus, Curr)</register>
+    <registerbit registername="CONFIG_NV" bit="0" name="INVERTHALL">Invert Hall signals (rotation direction)</registerbit>
+    <registerbit registername="CONFIG_NV" bit="1" name="INVERTOPTO">Invert incremental / optical encoder</registerbit>
+    <registerbit registername="CONFIG_NV" bit="2" name="INVERTPOSSPDCTR">Invert position/speed control output</registerbit>
+    <registerbit registername="CONFIG_NV" bit="3" name="INVERTICHAUS">Invert absolute position measurement</registerbit>
+    <registerbit registername="CONFIG_NV" bit="4" name="INVERTCURRENTMEAS">Invert current measurement</registerbit>
+    
+    <register id="24" type="uint16" name="INIT_ERROR_IGNORE">Initial error ignore settings</register>
+    <register id="26" type="uint16" name="INIT_ERROR_DISABLE">Initial error disable settings</register>    
+    
+    <register id="28" type="uint16" name="FRICTION_VIS">Viscous Friction Coeff.</register>
+    <register id="30" type="uint16" name="FRICTION_COU">Coulomb Friction Coeff.</register>
+    
+    
+    <!-- RAM-Register -->
+    <register id="266" type="uint16" name="CONFIG">Configuration register (enable, drive mode, ...)</register>
+    <registerbit registername="CONFIG" bit="0" name="ENABLE_CMD">Enable command</registerbit>
+    <registerbit registername="CONFIG" bit="1" name="INTERPOLATOR">Enable interpolator</registerbit>
+    <registerbit registername="CONFIG" bit="2" name="DIRECT_PWM">Enable direct pwm</registerbit>
+    <registerbit registername="CONFIG" bit="3" name="ZERO_POS">Set position offset, so that this position is zero.</registerbit>  
+    <registerbit registername="CONFIG" bit="4" name="RESET_POS">Set incremental encoder position to absolute position</registerbit>    
+    <registerbit registername="CONFIG" bit="5" name="RESET_ERRORS">Trigger reset of error flags</registerbit>
+    <registerbit registername="CONFIG" bit="6" name="OPEN_BRAKE">Open the brake</registerbit>
+    <registerbit registername="CONFIG" bit="7" name="WRITE_SETTINGS">Write settings trigger</registerbit>
+    
+<!--     <register id="139" type="uint8" name="CONFIG_1">Configuration register (enable, drive mode, ...)</register> -->
+    <registerbit registername="CONFIG" bit="8" name="FRICTION_COMP">Enable friction compensation</registerbit>
+    <registerbit registername="CONFIG" bit="9" name="FRICTION_IDENT">Initiate friction identification procedure (auto. disabled when finished/failed)</registerbit>
+    <registerbit registername="CONFIG" bit="10" name="FRICTION_COMP_ALWAYS_ACT">Always compensate friction for actual velocity</registerbit>
+<!--     <registerbit registername="CONFIG_1" bit="4" name="DYN_FF_ALWAYS_REF">Always use accelecation reference input, even when DYN_EN=0 disabled</registerbit> -->
+<!--     <registerbit registername="CONFIG_1" bit="5" name="DYN_FF">Enable dynamics feed-forward</registerbit> -->
+    
+    <registerbit registername="CONFIG" bit="14" name="DYN_COMP_ALWAYS_ACT">Always compensate for actual state</registerbit>
+    <registerbit registername="CONFIG" bit="13" name="DYN_AUTO_CALC">Calculate and send dynamics periodically</registerbit>
+    <registerbit registername="CONFIG" bit="15" name="DYN_EN">Enable dynamics compensation and feed-forward</registerbit>
+    
+    <register id="268" type="uint16" name="ERROR_IGNORE">Register to set error ignore bits (LSB)</register>
+    <register id="270" type="uint16" name="ERROR_DISABLE">Register to set error disable bits (LSB)</register>
+   
+    <!-- READ-Only-Register -->
+    <register id="514" type="uint16" name="STATE">Joint state Register (LSB)</register>
+    <registerbit registername="STATE" bit="0" name="ENABLE">Motor enable flag</registerbit>
+    <registerbit registername="STATE" bit="1" name="WARNINGFLAG">Joint in warning condition</registerbit>
+    <registerbit registername="STATE" bit="2" name="ERRORFLAG">Joint in error condition</registerbit>
+    
+<!--     <register id="155" type="uint8" name="STATE_1">Joint state Register (MSB)</register> -->
+    <registerbit registername="STATE" bit="8" name="ENABLE_CMD">Enable command</registerbit>
+<!--     <registerbit registername="STATE_1" bit="1" name="OPEN_BRAKE">Enable command</registerbit> -->
+    <registerbit registername="STATE" bit="9" name="INTERPOLATOR">Interpolator flag</registerbit>
+    <registerbit registername="STATE" bit="10" name="FRICTION_IDENT_DONE">Friction identification procedure finished</registerbit>    
+    <registerbit registername="STATE" bit="12" name="HALL0">Hall Signal 0</registerbit>
+    <registerbit registername="STATE" bit="13" name="HALL1">Hall Signal 1</registerbit>
+    <registerbit registername="STATE" bit="14" name="HALL2">Hall Signal 2</registerbit>
+    <registerbit registername="STATE" bit="15" name="PROM_BUSY">EEPROM Busy</registerbit>
+
+    <register id="516" type="uint16" name="WARNING">Joint warning register (ignored errors) (LSB)</register>
+    
+    <register id="518" type="uint16" name="ERROR">Joint error register (LSB)</register>
+    <registerbit registername="ERROR" bit="0" name="INIT">Initialization fail</registerbit>
+    <registerbit registername="ERROR" bit="1" name="POSITIONDIFFERENCE">Position difference between incremental and absolute encoder too large</registerbit>
+    <registerbit registername="ERROR" bit="2" name="POS_HARD_LIMIT">Position value out of hard limits</registerbit>
+    <registerbit registername="ERROR" bit="3" name="VEL_HARD_LIMIT">Velocity value out of hard limits</registerbit>
+    <registerbit registername="ERROR" bit="4" name="CUR_HARD_LIMIT">Current value out of hard limits</registerbit>
+    <registerbit registername="ERROR" bit="5" name="COMMTIMEOUTANY">Timeout since any communication</registerbit>
+    <registerbit registername="ERROR" bit="6" name="COMMTIMEOUTARMCMD">Timeout since last arm command message</registerbit>
+    <registerbit registername="ERROR" bit="7" name="TEMPERATURE">Temperature to high</registerbit>
+    
+    <registerbit registername="ERROR" bit="8" name="SENSOR_ICHAUS">Absolute pos. sensor failed</registerbit>
+    <registerbit registername="ERROR" bit="9" name="SENSOR_OPTO">Optical pos. sensor failed</registerbit>
+    <registerbit registername="ERROR" bit="10" name="SENSOR_HALL">Hall sensor failed</registerbit>
+    <registerbit registername="ERROR" bit="11" name="SENSOR_CURRENT">Current sensor failed</registerbit>
+    <registerbit registername="ERROR" bit="12" name="FRICTION_IDENT">Friction identification failed</registerbit>
+    <registerbit registername="ERROR" bit="13" name="VOLTAGE">Voltage to high</registerbit>
+    <registerbit registername="ERROR" bit="14" name="CTRL_LIMIT">One of the controller values saturated</registerbit>    
+
+    <register id="520" type="uint16" name="ICHAUS_RAW">Raw iC-Haus sensor reading (LSB)</register>
+    <register id="522" type="int16" name="ABS_POS">Actual, scaled absolute position (LSB)</register>
+    <register id="524" type="int16" name="POSITION">Actual Position (LSB)</register>
+    <register id="526" type="int16" name="MOTOR_CURRENT">Actual current (LSB)</register>
+    <register id="528" type="int16" name="CTRL_PWM">Control PWM (LSB)</register>
+    <register id="530" type="int16" name="ACTUAL_PWM">Actual PWM (LSB)</register>
+    <register id="532" type="int32" name="SPEED">Actual (encoder) Speed (bit 0-7)</register>
+    <register id="536" type="uint16" name="VOLTAGE">Actual joint voltage (LSB)</register>
+    <register id="538" type="uint16" name="MAXTEMPERATURE">Maximum temperature being measured (LSB)</register>
+    <register id="540" type="uint16" name="TEMPERATURE0">Actual temperature 0 (LSB)</register>
+    <register id="542" type="uint16" name="TEMPERATURE1">Actual temperature 1 (LSB)</register>
+    <register id="546" type="int16" name="DEBUG1">Debug1 (LSB)</register>
+    <register id="548" type="int16" name="DEBUG2">Debug2 (LSB)</register>
+    <register id="550" type="int16" name="DEBUG3">Debug3 (LSB)</register>
+    <register id="552" type="int16" name="DEBUG4">Debug3 (LSB)</register>
+    <register id="554" type="int16" name="DEBUG5">Debug3 (LSB)</register>    
+                    
+    
+</deviceclass>    
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  

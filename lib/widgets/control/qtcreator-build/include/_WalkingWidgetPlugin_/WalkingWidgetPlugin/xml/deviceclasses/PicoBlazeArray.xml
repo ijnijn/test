@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<deviceclass name="PicoBlazeArray"> <!-- extends="NDLCom" -->
+    <!-- Memory regions and start addresses for user program and/or bootloader -->
+    <!--<isp_region name="FPGA" begin="0x0" max_length="1500000"/>-->
+
+    <!-- number of registers and length of telemetry data -->
+    <registercount type="ROM" count="0" />
+    <registercount type="RAM" count="2" />
+    <registercount type="RO" count="1" />
+
+    <!-- ROM-Register -->
+
+    <!-- RAM-Register -->
+    <register id="1" type="uint8" name="INPUT">Input register mapped to KCPSM6</register>
+    <!--<registerbit registername="CONFIG" bit="0" name="ENABLE_CMD">Enable command</registerbit>-->
+    <!--<registerbit registername="CONFIG" bit="1" name="INTERPOLATOR">Enable interpolator</registerbit>-->
+    <!--<registerbit registername="CONFIG" bit="2" name="DIRECT_PWM">Enable direct pwm</registerbit>-->
+    <!--<registerbit registername="CONFIG" bit="7" name="WRITE_SETTINGS">Write settings trigger</registerbit>-->
+
+    <!-- RO-Register -->
+    <register id="2" type="uint8" name="OUTPUT">Output register mapped to KCPSM6</register>
+
+</deviceclass>

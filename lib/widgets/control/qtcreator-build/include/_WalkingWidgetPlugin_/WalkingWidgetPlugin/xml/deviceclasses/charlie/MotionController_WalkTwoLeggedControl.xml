@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<deviceclass name="MotionController_WalkTwoLeggedControl">
+    <register id="2001" type="uint8" name="HANDLE_DETECTED_STATE">Handle detected state (Early-Touchdown)</register>
+    <register id="2011" type="uint16" name="CYCLE_TIME">Cycle time (in ms)</register>
+    <register id="2012" type="uint16" name="MAX_DISTANCE_STANCE">Max. distance of feet (robot frame) during stance phase (in mm)</register>
+    <register id="2013" type="int16" name="SWING_POS_OFFSET_FRONT_X">x-position offset in leg swing phase (front) (in mm)</register>
+    <register id="2014" type="int16" name="SWING_POS_OFFSET_FRONT_Y">y-position offset in leg swing phase (front) (in mm)</register>
+    <register id="2015" type="int16" name="SWING_POS_OFFSET_FRONT_Z">z-position offset in leg swing phase (front) (in mm)</register>
+    <register id="2016" type="int16" name="SWING_POS_OFFSET_REAR_X">x-position offset in leg swing phase (rear) (in mm)</register>
+    <register id="2017" type="int16" name="SWING_POS_OFFSET_REAR_Y">y-position offset in leg swing phase (rear) (in mm)</register>
+    <register id="2018" type="int16" name="SWING_POS_OFFSET_REAR_Z">z-position offset in leg swing phase (rear) (in mm)</register>
+    <register id="2022" type="int16" name="CENTER_POS_FRONT_X">x-distance from front feet to robot center (in mm)</register>
+    <register id="2023" type="int16" name="CENTER_POS_FRONT_ABS_Y">y-distance from front feet to robot center (in mm)</register>
+    <register id="2024" type="int16" name="CENTER_POS_FRONT_Z">z-distance from front feet to robot center (in mm)</register>
+    <register id="2025" type="int16" name="CENTER_POS_REAR_X">x-distance from rear feet to robot center (in mm)</register>
+    <register id="2026" type="int16" name="CENTER_POS_REAR_ABS_Y">y-distance from rear feet to robot center (in mm)</register>
+    <register id="2027" type="int16" name="CENTER_POS_REAR_Z">z-distance from rear feet to robot center (in mm)</register>
+    <register id="2028" type="int16" name="CENTER_POS_Z_DELTA_FL">Difference FL to common CENTER_POS_Z (in mm)</register>
+    <register id="2029" type="int16" name="CENTER_POS_Z_DELTA_FR">Difference FR to common CENTER_POS_Z (in mm)</register>
+    <register id="2030" type="int16" name="CENTER_POS_Z_DELTA_RL">Difference RL to common CENTER_POS_Z (in mm)</register>
+    <register id="2031" type="int16" name="CENTER_POS_Z_DELTA_RR">Difference RR to common CENTER_POS_Z (in mm)</register>
+    <register id="2032" type="uint8" name="FIXED_FRONT_LEGS">MotionIkModule: Enable front legs fixed to body frame</register>
+    
+<!--     <register id="2035" type="singleFloat" name="SPINE_OFFSET_ROT_YAW">Spine: static offset yaw (in deg)</register>
+    <register id="2036" type="singleFloat" name="SPINE_OFFSET_ROT_PITCH">Spine: static offset pitch (in deg)</register>
+    <register id="2037" type="singleFloat" name="SPINE_OFFSET_ROT_ROLL">Spine: static offset roll (in deg)</register>
+
+    <register id="2041" type="singleFloat" name="REAR_PITCH_TOUCHDOWN">Pitch angle of the rear feet to ground at touchdown (in deg)</register>
+    <register id="2042" type="singleFloat" name="REAR_PITCH_TOEOFF">Pitch angle of the rear feet to ground at toe-off(in deg)</register>
+    <register id="2043" type="singleFloat" name="REAR_PITCH_MIDSWING">Pitch angle of the rear feet to ground at mid-swing(in deg)</register>
+    <register id="2045" type="uint8" name="JOINT_ANGLES_REQUEST_FILTER">Filter joint angles request (0: off, 1: on)</register>
+    <register id="2046" type="uint8" name="JOINT_ANGLES_REQUEST_FILTER_SLOWER">Allow slower velocity  by filtered joint angles request (0: off, 1: on)</register>
+    <register id="2047" type="uint8" name="JOINT_ANGLES_REQUEST_FILTER_FASTER">Allow a little bit faster velocity by filtered joint angles request (0: off, 1: on)</register>
+    <register id="2048" type="uint8" name="USE_ANKLE_JOINT_OFFSETS">Use ankle joint offsets for the virtual spring (0: off, 1: on)</register>
+-->
+    <register id="2050" type="singleFloat" name="TWO_LEGGED_DESIRED_ZMP_OFFSET_IN_X">Offset to the desired ZMP in x for two legged walking (in mm)</register>
+    <register id="2051" type="singleFloat" name="TWO_LEGGED_DESIRED_ZMP_OFFSET_IN_Y">Offset to the desired ZMP in y for two legged walking (in mm)</register>
+    <register id="2052" type="singleFloat" name="TWO_LEGGED_DESIRED_ZMP_OFFSET_IN_Z">Offset to the desired ZMP in z for two legged walking (in mm)</register>
+    
+</deviceclass>

@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+   <FileVersion major="1" minor="6" />
+   <Project>
+      <Option title="WalkingWidgetPlugin" />
+      <Option makefile_is_custom="1" />
+      <Option compiler="gcc" />
+      <Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\install\;CMake Files\..\..\..\..\..\install\share\;CMake Files\..\..\..\..\..\install\share\rock\;CMake Files\..\..\..\..\..\install\share\rock\cmake\;CMake Files\src\;CMake Files\test\;" />
+      <Build>
+      <Target title="all">
+         <Option working_dir="/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/Makefile&quot;  VERBOSE=1 all" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="install">
+         <Option working_dir="/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/Makefile&quot;  VERBOSE=1 install" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="install/local">
+         <Option working_dir="/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/Makefile&quot;  VERBOSE=1 install/local" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="install/strip">
+         <Option working_dir="/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/Makefile&quot;  VERBOSE=1 install/strip" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="list_install_components">
+         <Option working_dir="/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/Makefile&quot;  VERBOSE=1 list_install_components" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="rebuild_cache">
+         <Option working_dir="/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/Makefile&quot;  VERBOSE=1 rebuild_cache" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="WalkingWidgetPlugin">
+         <Option output="/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/src/libWalkingWidgetPlugin.so" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/src" />
+         <Option object_output="./" />
+         <Option type="3" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DBASE_LOG_NAMESPACE=WalkingWidgetPlugin" />
+            <Add option="-DQT_SHARED" />
+            <Add option="-DQT_SHARED" />
+            <Add option="-DIKFAST_REAL=double" />
+            <Add option="-DQT_SHARED" />
+            <Add directory="/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/include/_WalkingWidgetPlugin_" />
+            <Add directory="/home/vazizi/rock2/install/include" />
+            <Add directory="/home/vazizi/rock2/install/include/base/backward" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.6" />
+            <Add directory="/usr/include/c++/4.6/backward" />
+            <Add directory="/usr/include/c++/4.6/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/glib-2.0" />
+            <Add directory="/usr/include/glibmm-2.4" />
+            <Add directory="/usr/include/libxml++-2.6" />
+            <Add directory="/usr/include/libxml2" />
+            <Add directory="/usr/include/qt4" />
+            <Add directory="/usr/include/qt4/QtCore" />
+            <Add directory="/usr/include/qt4/QtGui" />
+            <Add directory="/usr/include/qt4/QtNetwork" />
+            <Add directory="/usr/include/sigc++-2.0" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.6/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.6/include-fixed" />
+            <Add directory="/usr/lib/libxml++-2.6/include" />
+            <Add directory="/usr/lib/x86_64-linux-gnu/glib-2.0/include" />
+            <Add directory="/usr/lib/x86_64-linux-gnu/glibmm-2.4/include" />
+            <Add directory="/usr/lib/x86_64-linux-gnu/sigc++-2.0/include" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/src/Makefile&quot;  VERBOSE=1 WalkingWidgetPlugin" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/src/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/src/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="WalkingWidgetPlugin/fast">
+         <Option output="/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/src/libWalkingWidgetPlugin.so" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/src" />
+         <Option object_output="./" />
+         <Option type="3" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DBASE_LOG_NAMESPACE=WalkingWidgetPlugin" />
+            <Add option="-DQT_SHARED" />
+            <Add option="-DQT_SHARED" />
+            <Add option="-DIKFAST_REAL=double" />
+            <Add option="-DQT_SHARED" />
+            <Add directory="/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/include/_WalkingWidgetPlugin_" />
+            <Add directory="/home/vazizi/rock2/install/include" />
+            <Add directory="/home/vazizi/rock2/install/include/base/backward" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.6" />
+            <Add directory="/usr/include/c++/4.6/backward" />
+            <Add directory="/usr/include/c++/4.6/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/glib-2.0" />
+            <Add directory="/usr/include/glibmm-2.4" />
+            <Add directory="/usr/include/libxml++-2.6" />
+            <Add directory="/usr/include/libxml2" />
+            <Add directory="/usr/include/qt4" />
+            <Add directory="/usr/include/qt4/QtCore" />
+            <Add directory="/usr/include/qt4/QtGui" />
+            <Add directory="/usr/include/qt4/QtNetwork" />
+            <Add directory="/usr/include/sigc++-2.0" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.6/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.6/include-fixed" />
+            <Add directory="/usr/lib/libxml++-2.6/include" />
+            <Add directory="/usr/lib/x86_64-linux-gnu/glib-2.0/include" />
+            <Add directory="/usr/lib/x86_64-linux-gnu/glibmm-2.4/include" />
+            <Add directory="/usr/lib/x86_64-linux-gnu/sigc++-2.0/include" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/src/Makefile&quot;  VERBOSE=1 WalkingWidgetPlugin/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/src/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/src/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/src/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="test_suite">
+         <Option output="/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/test/test_suite" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/test" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DBASE_LOG_NAMESPACE=WalkingWidgetPlugin" />
+            <Add option="-DQT_SHARED" />
+            <Add option="-DQT_SHARED" />
+            <Add option="-DIKFAST_REAL=double" />
+            <Add option="-DQT_SHARED" />
+            <Add directory="/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/include/_WalkingWidgetPlugin_" />
+            <Add directory="/home/vazizi/rock2/install/include" />
+            <Add directory="/home/vazizi/rock2/install/include/base/backward" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.6" />
+            <Add directory="/usr/include/c++/4.6/backward" />
+            <Add directory="/usr/include/c++/4.6/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/glib-2.0" />
+            <Add directory="/usr/include/glibmm-2.4" />
+            <Add directory="/usr/include/libxml++-2.6" />
+            <Add directory="/usr/include/libxml2" />
+            <Add directory="/usr/include/qt4" />
+            <Add directory="/usr/include/qt4/QtCore" />
+            <Add directory="/usr/include/qt4/QtGui" />
+            <Add directory="/usr/include/qt4/QtNetwork" />
+            <Add directory="/usr/include/sigc++-2.0" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.6/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.6/include-fixed" />
+            <Add directory="/usr/lib/libxml++-2.6/include" />
+            <Add directory="/usr/lib/x86_64-linux-gnu/glib-2.0/include" />
+            <Add directory="/usr/lib/x86_64-linux-gnu/glibmm-2.4/include" />
+            <Add directory="/usr/lib/x86_64-linux-gnu/sigc++-2.0/include" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/test/Makefile&quot;  VERBOSE=1 test_suite" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/test/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/test/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="test_suite/fast">
+         <Option output="/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/test/test_suite" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/test" />
+         <Option object_output="./" />
+         <Option type="1" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DBASE_LOG_NAMESPACE=WalkingWidgetPlugin" />
+            <Add option="-DQT_SHARED" />
+            <Add option="-DQT_SHARED" />
+            <Add option="-DIKFAST_REAL=double" />
+            <Add option="-DQT_SHARED" />
+            <Add directory="/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/include/_WalkingWidgetPlugin_" />
+            <Add directory="/home/vazizi/rock2/install/include" />
+            <Add directory="/home/vazizi/rock2/install/include/base/backward" />
+            <Add directory="/usr/include" />
+            <Add directory="/usr/include/c++/4.6" />
+            <Add directory="/usr/include/c++/4.6/backward" />
+            <Add directory="/usr/include/c++/4.6/x86_64-linux-gnu/." />
+            <Add directory="/usr/include/glib-2.0" />
+            <Add directory="/usr/include/glibmm-2.4" />
+            <Add directory="/usr/include/libxml++-2.6" />
+            <Add directory="/usr/include/libxml2" />
+            <Add directory="/usr/include/qt4" />
+            <Add directory="/usr/include/qt4/QtCore" />
+            <Add directory="/usr/include/qt4/QtGui" />
+            <Add directory="/usr/include/qt4/QtNetwork" />
+            <Add directory="/usr/include/sigc++-2.0" />
+            <Add directory="/usr/include/x86_64-linux-gnu" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.6/include" />
+            <Add directory="/usr/lib/gcc/x86_64-linux-gnu/4.6/include-fixed" />
+            <Add directory="/usr/lib/libxml++-2.6/include" />
+            <Add directory="/usr/lib/x86_64-linux-gnu/glib-2.0/include" />
+            <Add directory="/usr/lib/x86_64-linux-gnu/glibmm-2.4/include" />
+            <Add directory="/usr/lib/x86_64-linux-gnu/sigc++-2.0/include" />
+            <Add directory="/usr/local/include" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/test/Makefile&quot;  VERBOSE=1 test_suite/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/test/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/test/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/test/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      </Build>
+      <Unit filename="/home/vazizi/rock2/charlie/lib/widgets/control/WalkingWidgetPlugin/src/WalkingWidgetPlugin.cc">
+      </Unit>
+      <Unit filename="/home/vazizi/rock2/charlie/lib/widgets/control/WalkingWidgetPlugin/src/WalkingWidgetPluginPlugin.cc">
+      </Unit>
+      <Unit filename="/home/vazizi/rock2/charlie/lib/widgets/control/WalkingWidgetPlugin/test/suite.cpp">
+      </Unit>
+      <Unit filename="/home/vazizi/rock2/charlie/lib/widgets/control/WalkingWidgetPlugin/test/test_Dummy.cpp">
+      </Unit>
+      <Unit filename="/home/vazizi/rock2/charlie/lib/widgets/control/WalkingWidgetPlugin/src/WalkingWidgetPlugin.h">
+      </Unit>
+      <Unit filename="/home/vazizi/rock2/charlie/lib/widgets/control/WalkingWidgetPlugin/src/WalkingWidgetPluginPlugin.h">
+      </Unit>
+      <Unit filename="/home/vazizi/rock2/charlie/lib/widgets/control/WalkingWidgetPlugin/src/resources.qrc">
+      </Unit>
+      <Unit filename="/home/vazizi/rock2/charlie/lib/widgets/control/WalkingWidgetPlugin/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\" />
+      </Unit>
+      <Unit filename="/home/vazizi/rock2/charlie/lib/widgets/control/WalkingWidgetPlugin/../../../../../install/share/rock/cmake/rock-config.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\install\share\rock\cmake\" />
+      </Unit>
+      <Unit filename="/home/vazizi/rock2/charlie/lib/widgets/control/WalkingWidgetPlugin/../../../../../install/share/rock/cmake/Rock.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\install\share\rock\cmake\" />
+      </Unit>
+      <Unit filename="/home/vazizi/rock2/charlie/lib/widgets/control/WalkingWidgetPlugin/../../../../../install/share/rock/cmake/FindBoost.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\install\share\rock\cmake\" />
+      </Unit>
+      <Unit filename="/home/vazizi/rock2/charlie/lib/widgets/control/WalkingWidgetPlugin/src/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\src\" />
+      </Unit>
+      <Unit filename="/home/vazizi/rock2/charlie/lib/widgets/control/WalkingWidgetPlugin/src/resources.qrc">
+          <Option virtualFolder="CMake Files\src\" />
+      </Unit>
+      <Unit filename="/home/vazizi/rock2/charlie/lib/widgets/control/WalkingWidgetPlugin/src/WalkingWidgetPlugin.pc.in">
+          <Option virtualFolder="CMake Files\src\" />
+      </Unit>
+      <Unit filename="/home/vazizi/rock2/charlie/lib/widgets/control/WalkingWidgetPlugin/test/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\test\" />
+      </Unit>
+   </Project>
+</CodeBlocks_project_file>

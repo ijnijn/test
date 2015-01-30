@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<deviceclass name="MotionController_SendToPc">
+    <register id="20" type="uint8" name="SEND_ROBOT_STATUS">Send robot status (1:on, 0:off)</register>
+    <register id="21" type="uint8" name="SEND_REQUESTED_JOINT_POSE">Send requested joint pose (1:on, 0:off)</register>
+    <register id="22" type="uint8" name="SEND_MEASURED_JOINT_POSE">Send measured joint pose (1:on, 0:off)</register>
+    <register id="23" type="uint8" name="SEND_DESIRED_MOTOR_POSITIONS">Send desired motor positions (1:on, 0:off)</register>
+    <register id="24" type="uint8" name="SEND_MEASURED_MOTOR_POSITIONS">Send measured motor positions (1:on, 0:off)</register>
+    <register id="25" type="uint8" name="SEND_REQUESTED_SPEED">Send requested speed (1:on, 0:off)</register>
+    <register id="26" type="uint8" name="SEND_MEASURED_SPEED">Send measured speed (1:on, 0:off)</register>
+    <register id="27" type="uint8" name="SEND_MEASURED_ICHAUS_POSITION">Send measured ic-haus positions (1:on, 0:off)</register>
+    <register id="28" type="uint8" name="SEND_CURRENT">Send motor current (1:on, 0:off)</register>
+    <register id="29" type="uint8" name="SEND_PWM">Send motor PWM (1:on, 0:off)</register>
+    <register id="30" type="uint8" name="SEND_TEMPERATURE">Send motor temperature (1:on, 0:off)</register>
+    <register id="31" type="uint8" name="SEND_BLDCJOINT_TELEMETRY_ID">Send telemetry of this BLDC joint (joint id, 0: off)</register>
+    <register id="32" type="uint8" name="SEND_ANKLEJOINT_TELEMETRY_ID">Send telemetry of this ankle joint (joint id, 0: off)</register>
+    <register id="33" type="uint8" name="SEND_SPINE_TELEMETRY">Send telemetry of the spine joint (1: on, 0: off)</register>
+    <register id="34" type="uint8" name="SEND_HEAD_TELEMETRY">Send telemetry of head joint (1: on, 0: off)</register>
+    <register id="35" type="uint8" name="SEND_FT_SENSOR_VALUES">Send feet FT Sensor values (1: on, 0: off)</register>
+    <register id="36" type="uint8" name="SEND_WALKING_STATE">Send walking state (1: on, 0: off)</register>
+    <register id="37" type="uint8" name="SEND_IMUS">Send raw data from the two Xsens Imu (id1/2) and the virtual Imu in rest system (id3) (1: on, 0: off)</register>
+    <register id="39" type="uint8" name="SEND_FILTERED_WALKING_SPEED">Send walking state (1: on, 0: off)</register>
+    <register id="40" type="uint8" name="SEND_GLOBAL_SUPPORT_POLYGON">Send walking state (1: on, 0: off)</register>
+</deviceclass>

@@ -1,0 +1,2 @@
+/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/src/CMakeFiles/WalkingWidgetPlugin.dir
+/home/vazizi/rock2/charlie/lib/widgets/control/qtcreator-build/test/CMakeFiles/test_suite.dir

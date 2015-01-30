@@ -1,0 +1,12 @@
+prefix=/usr/local
+exec_prefix=/usr/local
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: WalkingWidgetPlugin
+Description: 
+Version: 0.1
+Requires:  base-types base-lib QtCore QtGui widgets-charlie
+Libs: -L${libdir} -lWalkingWidgetPlugin 
+Cflags: -I${includedir} 
+
